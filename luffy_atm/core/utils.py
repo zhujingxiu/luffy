@@ -3,8 +3,23 @@
 # _AUTHOR_  : zhujingxiu
 # _DATE_    : 2018/1/16
 
-import datetime
-import hashlib
+
+def initial():
+    """
+    初始化目录
+    :return: 
+    """
+    import os
+    from conf import settings
+    if not os.path.exists(settings.LOG_PATH):
+        os.mkdir(settings.LOG_PATH)
+
+    if settings.DATABASE['engine'] == 'file_storage':
+        if not os.path.exists(settings.DATABASE['file_path']):
+            os.mkdir(settings.DATABASE['file_path'])
+        for table in settings.DATABASE['tables']:
+            if not os.path.exists(settings.DATABASE['tables'][table]['file_path']):
+                os.mkdir(settings.DATABASE['tables'][table]['file_path'])
 
 
 def format_result(action):
@@ -13,16 +28,20 @@ def format_result(action):
     :param action: 
     :return: 
     """
+
     def hook_action(**kwargs):
         ret = action(**kwargs)
-        if ret['status'] < 0:
-            print(ret['status'])
-            return False
-        logger = ret['logger'] if 'logger' in ret else False
-        if logger:
-            logger.info(ret['msg'])
-            print("操作成功,操作内容：%s" % ret['msg'])
-            return True
+        if isinstance(ret,dict):
+            status = ret.get('status', 0)
+            if status < 0:
+                print(ret['status'])
+                return False
+            logger = ret.get('logger', False)
+            if logger:
+                logger.info(ret['msg'])
+                if 'print' not in ret or ret['print']:
+                    print("\033[92m操作成功,\033[0m操作内容：%s" % ret['msg'])
+                return True
         return False
 
     return hook_action
@@ -34,6 +53,7 @@ def hash_md5(content):
     :param content: 
     :return: 
     """
+    import hashlib
     encypt = hashlib.md5()
     encypt.update(bytes(content, encoding='utf-8'))
     return encypt.hexdigest()
@@ -48,6 +68,7 @@ def calculate_date(years=0, months=0, days=0, time_format=False):
     :param time_format: 
     :return: 
     """
+    import datetime
     date_formatter = "%Y-%m-%d"
     if time_format:
         date_formatter = "%Y-%m-%d %H:%M:%S"
@@ -62,9 +83,9 @@ def format_table(header, records):
     :param records: 
     :return: 
     """
-    print("".join(["\033[94m%s\033[0m" % i.center(20).title() for i in header]))
+    print("".join(["\033[94m%s\033[0m" % i.center(32).title() for i in header]))
     for record in records:
-        print("".join([str(record[i]).center(20) for i in record]))
+        print("".join([str(record[i]).center(32) for i in record]))
     print("共有\033[92m%d\033[0m条记录" % len(records))
 
 
@@ -106,3 +127,15 @@ def format_status(status):
     :return: 
     """
     return '\033[91m禁用\033[0m' if int(status) else '\033[92m正常\033[0m'
+
+
+def format_transaction(trans_type):
+    """
+    格式化交易类型
+    :param trans_type: 
+    :return: 
+    """
+    from conf import settings
+    if trans_type not in settings.TRANSACTION_TYPE.keys() or 'title' not in settings.TRANSACTION_TYPE[trans_type]:
+        return '未知类型'
+    return settings.TRANSACTION_TYPE[trans_type]['title']

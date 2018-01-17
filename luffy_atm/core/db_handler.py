@@ -3,9 +3,9 @@
 # _AUTHOR_  : zhujingxiu
 # _DATE_    : 2018/1/15
 import os
+import json
 from conf import settings
 from core import utils
-import json
 
 
 def get_logics():
@@ -35,7 +35,7 @@ def do_logic(field_value, logic_symbol, value):
     """
     if not check_logic(logic_symbol.strip()):
         print('逻辑符非法')
-        return -1
+        return False
     value = utils.strip_extend(value) if isinstance(value, str) else str(value)
     field_value = utils.strip_extend(field_value) if isinstance(field_value, str) else str(field_value)
     option = logic_symbol.strip().lower()
@@ -61,8 +61,8 @@ def check_field(table, *args):
     for field in args:
         field = field.strip()
         if field not in settings.DATABASE['tables'][table]['structure'].keys():
-            print('字段不匹配')
-            return -3
+            print('字段 %s 不匹配' % field)
+            return False
         fields.append(field)
     return fields
 
@@ -76,22 +76,25 @@ def data_api(action, table, **kwargs):
     :param kwargs: 附加参数 : where，用于条件过滤；set，用于设置更新字段；fields，查询指定字段
     :return: 
     """
-    conn_params = settings.DATABASE
-    if conn_params['engine'] == 'file_storage':
+    db_params = settings.DATABASE
+    if db_params['engine'] == 'file_storage':
         actions = {
             'add': add_action,
             'update': update_action,
             'find': find_action,
         }
-    elif conn_params['engine'] == 'mysql':
+    elif db_params['engine'] == 'mysql':
         actions = {
             'add': add_formatter,
             'update': update_formatter,
             'find': find_formatter,
         }
+    else:
+        print("暂不支持存储引擎 %s " % db_params['engine'])
+        return False
     if action not in actions.keys():
-        print('错误的选项')
-        return -2
+        print('错误的查询操作类型')
+        return False
     ret = actions[action](table, **kwargs)
 
     return ret
@@ -110,7 +113,8 @@ def fetch_all(table):
     for record in records:
         with open(os.path.join(settings.DATABASE['tables'][table]['file_path'], record)) as f:
             entry = json.load(f)
-            if isinstance(entry, dict) and set(entry.keys()).issubset(settings.DATABASE['tables'][table]['structure']):
+            if isinstance(entry, dict):
+                # 检查表结构是否完整 and set(entry.keys()).issubset(settings.DATABASE['tables'][table]['structure'])
                 result.append(entry)
     return result
 
@@ -122,13 +126,15 @@ def find_action(table, **kwargs):
     :param kwargs: 
     :return: 
     """
-    fields = kwargs.get('fields', *('*',))
+    fields = kwargs.get('fields', ('*',))
     where = kwargs.get('where')
     ret = check_field(table, *fields)
     if isinstance(ret, int):
         return ret
     result = []
     records = fetch_all(table)
+    if not len(records):
+        return result
     for record in records:
         available = True
         if where:
@@ -141,7 +147,6 @@ def find_action(table, **kwargs):
                 else:
                     logic_symbol = i['logic']
                 statement = do_logic(record[i['field']], logic_symbol, i['value'])
-                print(statement)
                 if not eval(statement):
                     available = False
                     break
@@ -164,26 +169,25 @@ def update_action(table, **kwargs):
     fields = kwargs.get('set')
     if not fields:
         print('语法错误')
-        return -2
+        return False
     where = kwargs.get('where')
     ret = find_action(table, **{'where': where})
-    if isinstance(ret, int):
+    if isinstance(ret, int) or not len(ret):
+        print(ret)
         return ret
     # 不可修改保留字段的值
-    if settings.DATABASE['tables'][table]['file_name'] in fields.keys():
+    if set(settings.DATABASE['tables'][table]['file_name']).issubset(fields.keys()):
         print('不可修改保留字段的值')
-        return -4
+        return False
     update_count = 0
-    if not len(ret):
-        print("没有找到结果")
-        return -5
     for record in ret:
         record.update(fields)
-        storage_db(os.path.join(settings.DATABASE['tables'][table]['file_path'],
-                                "%s.json" % utils.hash_md5(record[settings.DATABASE['tables'][table]['file_name']])),
-                   record)
-        update_count += 1
-
+        file_name = db_file_name(table, record)
+        if file_name:
+            storage_db(file_name, record)
+            update_count += 1
+        else:
+            continue
     return update_count
 
 
@@ -198,11 +202,13 @@ def add_action(table, **kwargs):
     ret = check_field(table, *fields)
     if isinstance(ret, int):
         return ret
+    file_name = db_file_name(table, fields)
 
-    storage_db(os.path.join(settings.DATABASE['tables'][table]['file_path'],
-                            "%s.json" % utils.hash_md5(fields[settings.DATABASE['tables'][table]['file_name']])),
-               fields)
-    return True
+    if file_name:
+        storage_db(file_name, fields)
+        return True
+
+    return False
 
 
 def storage_db(file, info):
@@ -215,6 +221,38 @@ def storage_db(file, info):
     with open(file, 'w', encoding='utf-8') as f:
         json.dump(info, f)
     return True
+
+
+def db_file_name(table, entry):
+    """
+    表文件命名
+    :param table: 
+    :param entry: 
+    :return: 
+    """
+    file_rule = settings.DATABASE['tables'][table].get('file_rule', "join")
+    fields = settings.DATABASE['tables'][table]['file_name']
+    if not isinstance(fields, tuple):
+        print("存储文件名称，命名字段 %s 异常" % type(fields))
+        return False
+    tmp = []
+    for i in fields:
+        if i in entry:
+            tmp.append(entry[i] if isinstance(entry[i], str) else str(entry[i]))
+        else:
+            continue
+    if not tmp:
+        print('存储文件名称，字段 %s 异常' % ",".join(fields))
+        return False
+    if file_rule == 'md5':
+        filename = utils.hash_md5("".join(tmp))
+    elif file_rule == 'join':
+        filename = "_".join(tmp)
+    else:
+        print('存储文件名称，命名规则 %s 异常' % file_rule)
+        return False
+
+    return os.path.join(settings.DATABASE['tables'][table]['file_path'], "%s.json" % filename)
 
 
 def add_formatter(table, **kwargs):
@@ -261,7 +299,6 @@ def find_formatter(table, **kwargs):
     """
     检索语句生成器
     :param table:表名 
-    :param args: 字段，*表全部字段
     :param kwargs: 条件
     :return: 
     """

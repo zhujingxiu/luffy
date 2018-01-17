@@ -25,15 +25,16 @@ LOG_TYPES = {
 LOG_FORMATTER = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 # 允许的交易类型
 TRANSACTION_TYPE = {
-    'repay': {'action': 'plus', 'interest': 0},
-    'withdraw': {'action': 'minus', 'interest': 0.05},
-    'transfer': {'action': 'minus', 'interest': 0.05},
-    'consume': {'action': 'minus', 'interest': 0}
+    'repay': {'title':'还款','action': 'plus', 'interest': 0},
+    'withdraw': {'title':'取现','action': 'minus', 'interest': 0.05},
+    'transfer': {'title':'转账','action': 'transfer', 'interest': 0.05},
+    'consume': {'title':'消费','action': 'minus', 'interest': 0}
 }
 
 # 用户存档目录
 USER_TABLE = 'users'
 # 商品存档目录
+HISTORY_TABLE = 'user_histories'
 PRODUCT_TABLE = 'products'
 """
 DATABASE 数据库
@@ -42,6 +43,7 @@ DATABASE 数据库
     tables 数据表
         file_path: 仅当存储引擎为file_storage文件存储时有效。数据表文件存储时的目录
         file_name: 仅当存储引擎为file_storage文件存储时有效。数据表文件存储时的文件名，值为structure中的字段对应的值，不可修改对应的值
+        file_rule: 仅当存储引擎为file_storage文件存储时有效。数据表文件存储时的文件名的命名规则
         structure：表结构
 """
 DATABASE = {
@@ -50,7 +52,8 @@ DATABASE = {
     'tables': {
         USER_TABLE: {
             'file_path': os.path.join(BASE_DIR, 'db', USER_TABLE),
-            'file_name': 'username',
+            'file_name': ('username',),
+            'file_rule': 'md5',
             'structure': {
                 'id': 0,
                 'username': '',
@@ -60,13 +63,28 @@ DATABASE = {
                 'expire_date': '',
                 'enroll_date': '',
                 'status': 0,
-                'cart': {},
-                'logs': {},
+                'cart': [],
+            }
+        },
+        HISTORY_TABLE: {
+            'file_path': os.path.join(BASE_DIR, 'db', HISTORY_TABLE),
+            'file_name': ('user_id','add_time'),
+            'file_rule': 'join',
+            'structure': {
+                'user_id': '',
+                'username': '',
+                'transaction': '',
+                'amount': 0,
+                'fee': 0,
+                'balance': 0,
+                'add_time': '',
+                'note': '',
             }
         },
         PRODUCT_TABLE: {
             'file_path': os.path.join(BASE_DIR, 'db', PRODUCT_TABLE),
-            'file_name': 'title',
+            'file_name': ('title',),
+            'file_rule': 'md5',
             'structure': {
                 'id': 0,
                 'title': '',

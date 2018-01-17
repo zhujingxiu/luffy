@@ -5,9 +5,9 @@
 
 from conf import settings
 from core import logger
+from core import utils
 from .auth import authenticate
 from . import models
-import os
 
 admin_logger = logger.logger("admin")
 
@@ -27,36 +27,19 @@ def admin_menu():
     }
 
 
-def initial():
-    """
-    初始化目录
-    :return: 
-    """
-    if not os.path.exists(settings.LOG_PATH):
-        os.mkdir(settings.LOG_PATH)
-
-    if settings.DATABASE['engine'] == 'file_storage':
-        if not os.path.exists(settings.DATABASE['file_path']):
-            os.mkdir(settings.DATABASE['file_path'])
-        for table in settings.DATABASE['tables']:
-            if not os.path.exists(settings.DATABASE['tables'][table]['file_path']):
-                os.mkdir(settings.DATABASE['tables'][table]['file_path'])
-
-
 def run():
     """
     管理后台交互入口
     :return: 
     """
-    initial()
+    utils.initial()
     admin_authenticate = False
     retry_count = 0
     while retry_count < settings.LOGIN_ATTEMPTS:
         username = input("请输入管理员账号:>>").strip()
         password = input("请输入管理员密码:>>").strip()
-
         if authenticate(username, password):
-            print('登录成功')
+            print('\033[92m登录成功\033[0m')
             admin_authenticate = True
             break
         else:
@@ -67,14 +50,12 @@ def run():
         exit(0)
 
     if admin_authenticate:
-
         dispatch()
 
 
 def dispatch():
     """
     功能分发
-    :param option: 
     :return: 
     """
     menu = admin_menu()
@@ -90,7 +71,5 @@ def dispatch():
         kwargs = {}
         if menu[option]['log']:
             kwargs['logger'] = admin_logger
-
-        ret = menu[option]['action'](**kwargs)
-
+        menu[option]['action'](**kwargs)
         option = 0

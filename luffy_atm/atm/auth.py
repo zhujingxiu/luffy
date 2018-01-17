@@ -18,14 +18,12 @@ def authenticate(username,password):
     ret = db_handler.data_api('find', settings.USER_TABLE,
                               **{'fields': ('*',), 'where': [{'field': 'username', 'value': username}]})
     if isinstance(ret, int):
-        print('异常')
         return False
     if not len(ret):
-        print('用户名密码不匹配')
         return False
     user = ret[0]
-    print(user)
+    if user and user.get('status') != 0:
+        return False
     if utils.hash_md5(password) != user['password']:
-        print('用户名密码不匹配')
         return False
     return user
