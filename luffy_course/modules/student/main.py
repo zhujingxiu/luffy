@@ -9,12 +9,12 @@ from .auth import Auth
 
 
 class Main(Service):
-    __log_type__ = 'student'
-    __main_menu__ = {
+    __log_type = 'student'
+    __main_menu = {
         '1': {'title': '注册', 'action': Auth.regist, 'log': True},
         '2': {'title': '登录', 'action': Auth.login, 'log': True},
     }
-    __student_menu__ = {
+    __student_menu = {
         '1': {'title': '查看信息', 'action': Models.profile, 'log': False},
         '2': {'title': '充值', 'action': Models.recharge, 'log': True},
         '3': {'title': '查看班级', 'action': Models.show_classes, 'log': True},
@@ -27,14 +27,14 @@ class Main(Service):
     @classmethod
     def run(cls):
         while True:
-            menu = cls.__main_menu__
+            menu = cls.__main_menu
             for k in menu:
                 print("%s.%s" % (k, menu[k]['title']))
             option = input("请输入操作序号:>>").strip()
             if option not in menu.keys():
                 print("错误的选项")
                 continue
-            ret = menu[option]['action'](**{'logger': Logger(cls.__log_type__)})
+            ret = menu[option]['action'](**{'logger': Logger(cls.__log_type)})
 
             if ret:
                 from libs.luffy_student import LuffyStudent
@@ -44,7 +44,7 @@ class Main(Service):
     @classmethod
     def interactive(cls, user):
         option = 0
-        menu = cls.__student_menu__
+        menu = cls.__student_menu
         while not option:
             for k in menu:
                 print("%s.%s" % (k, menu[k]['title']))
@@ -55,6 +55,6 @@ class Main(Service):
                 continue
             kwargs = {}
             if menu[option]['log']:
-                kwargs['logger'] = Logger(cls.__log_type__)
+                kwargs['logger'] = Logger(cls.__log_type)
             menu[option]['action'](user, **kwargs)
             option = 0

@@ -17,9 +17,9 @@ class LuffyStudent(BaseModel):
         self.username = username
         self.password = password
         self.school_sn = school_sn
-        self.__balance__ = 0
-        self.__transaction__ = []
-        self.__score__ = 0
+        self.__balance = 0
+        self.__transaction = []
+        self.__score = 0
 
     def add_balance(self, amount):
         """
@@ -27,14 +27,14 @@ class LuffyStudent(BaseModel):
         :param amount: 
         :return: 
         """
-        self.__balance__ += amount
+        self.__balance += amount
 
     def get_balance(self):
         """
         获取余额
         :return: 
         """
-        return self.__balance__
+        return self.__balance
 
     def add_transaction(self, transaction):
         """
@@ -42,14 +42,14 @@ class LuffyStudent(BaseModel):
         :param transaction: 
         :return: 
         """
-        self.__transaction__.append(transaction)
+        self.__transaction.append(transaction)
 
     def transactions(self):
         """
         获取交易记录
         :return: 
         """
-        return self.__transaction__
+        return self.__transaction
 
     def set_score(self, score):
         """
@@ -57,15 +57,15 @@ class LuffyStudent(BaseModel):
         :param score: 
         :return: 
         """
-        self.__score__ = score
+        self.__score = score
 
     def score(self):
         """
         获取成绩
         :return: 
         """
-        return self.__score__
+        return self.__score
 
     def __str__(self):
         return "学生：%s 余额：%s 得分：%s 学校：%s" % (
-            self.username, self.__balance__, self.__score__, LuffySchool.fetch_one(self.school_sn).title)
+            self.username, self.__balance, self.__score, LuffySchool.fetch_one(self.school_sn).title)

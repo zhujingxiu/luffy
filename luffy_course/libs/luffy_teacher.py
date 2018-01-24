@@ -16,24 +16,24 @@ class LuffyTeacher(BaseModel):
         self.username = username
         self.password = utils.hash_md5(password)
         self.school_sn = school_sn
-        self.__students__ = []
-        self.__classes__ = []
-        self.__duties__ = []
+        self.__students = []
+        self.__classes = []
+        self.__duties = []
 
-    def add_duty(self,duty):
+    def add_duty(self, duty):
         """
         执勤记录
         :param duty: 
         :return: 
         """
-        self.__duties__.append(duty)
+        self.__duties.append(duty)
 
     def duties(self):
         """
         返回执勤列表
         :return: 
         """
-        return self.__duties__
+        return self.__duties
 
     def add_class(self, class_sn):
         """
@@ -41,14 +41,14 @@ class LuffyTeacher(BaseModel):
         :param class_sn: 
         :return: 
         """
-        self.__classes__.append(class_sn)
+        self.__classes.append(class_sn)
 
     def classes(self):
         """
         返回班级列表
         :return: 
         """
-        return self.__classes__
+        return self.__classes
 
     def add_student(self, student_sn):
         """
@@ -56,15 +56,15 @@ class LuffyTeacher(BaseModel):
         :param student_sn: 
         :return: 
         """
-        self.__students__.append(student_sn)
+        self.__students.append(student_sn)
 
     def students(self):
         """
         返回学生列表
         :return: 
         """
-        return self.__students__
+        return self.__students
 
     def __str__(self):
         return "讲师：%s 学校：%s 班级数：%s 学员数：%d" % (
-            self.username, LuffySchool.fetch_one(self.school_sn).title, len(self.__classes__), len(self.__students__))
+            self.username, LuffySchool.fetch_one(self.school_sn).title, len(self.__classes), len(self.__students))

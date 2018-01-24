@@ -14,10 +14,10 @@ class LuffySchool(BaseModel):
     def __init__(self, title):
         self.sn = utils.sn()
         self.title = title
-        self.__teachers__ = []
-        self.__classes__ = []
-        self.__courses__ = []
-        self.__students__ = []
+        self.__teachers = []
+        self.__classes = []
+        self.__courses = []
+        self.__students = []
 
     def add_teacher(self, teacher_sn):
         """
@@ -25,7 +25,7 @@ class LuffySchool(BaseModel):
         :param teacher_sn: 
         :return: 
         """
-        self.__teachers__.append(teacher_sn)
+        self.__teachers.append(teacher_sn)
 
     def remove_teacher(self, teacher_sn):
         """
@@ -33,15 +33,15 @@ class LuffySchool(BaseModel):
         :param teacher_sn: 
         :return: 
         """
-        if teacher_sn in self.__teachers__:
-            self.__teachers__.remove(teacher_sn)
+        if teacher_sn in self.__teachers:
+            self.__teachers.remove(teacher_sn)
 
     def teachers(self):
         """
         返回教师列表
         :return: 
         """
-        return self.__teachers__
+        return self.__teachers
 
     def add_course(self, course_sn):
         """
@@ -49,7 +49,7 @@ class LuffySchool(BaseModel):
         :param course_sn: 
         :return: 
         """
-        self.__courses__.append(course_sn)
+        self.__courses.append(course_sn)
 
     def remove_course(self, course_sn):
         """
@@ -57,15 +57,15 @@ class LuffySchool(BaseModel):
         :param course_sn: 
         :return: 
         """
-        if course_sn in self.__courses__:
-            self.__courses__.remove(course_sn)
+        if course_sn in self.__courses:
+            self.__courses.remove(course_sn)
 
     def courses(self):
         """
         返回课程列表
         :return: 
         """
-        return self.__courses__
+        return self.__courses
 
     def add_class(self, class_sn):
         """
@@ -73,7 +73,7 @@ class LuffySchool(BaseModel):
         :param class_sn: 
         :return: 
         """
-        self.__classes__.append(class_sn)
+        self.__classes.append(class_sn)
 
     def remove_class(self, class_sn):
         """
@@ -81,15 +81,15 @@ class LuffySchool(BaseModel):
         :param class_sn: 
         :return: 
         """
-        if class_sn in self.__classes__:
-            self.__classes__.remove(class_sn)
+        if class_sn in self.__classes:
+            self.__classes.remove(class_sn)
 
     def classes(self):
         """
         返回班级列表
         :return: 
         """
-        return self.__classes__
+        return self.__classes
 
     def add_student(self, student_sn):
         """
@@ -97,7 +97,7 @@ class LuffySchool(BaseModel):
         :param student_sn: 
         :return: 
         """
-        self.__students__.append(student_sn)
+        self.__students.append(student_sn)
 
     def remove_student(self, student_sn):
         """
@@ -105,16 +105,16 @@ class LuffySchool(BaseModel):
         :param student_sn: 
         :return: 
         """
-        if student_sn in self.__students__:
-            self.__students__.remove(student_sn)
+        if student_sn in self.__students:
+            self.__students.remove(student_sn)
 
     def students(self):
         """
         返回学生列表
         :return: 
         """
-        return self.__students__
+        return self.__students
 
     def __str__(self):
         return "学校：%s 讲师数：%d 班级数：%d 课程数：%d 学生数：%d" % (
-            self.title, len(self.__teachers__), len(self.__classes__), len(self.__courses__), len(self.__students__))
+            self.title, len(self.__teachers), len(self.__classes), len(self.__courses), len(self.__students))

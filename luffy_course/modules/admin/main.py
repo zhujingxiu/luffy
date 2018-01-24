@@ -11,8 +11,8 @@ from .auth import Auth
 
 
 class Main(Service):
-    __log_type__ = 'admin'
-    __admin_menu__ = {
+    __log_type = 'admin'
+    __admin_menu = {
         '1': {'title': '查看学校列表', 'action': Models.show_schools, 'log': False},
         '2': {'title': '添加学校信息', 'action': Models.create_school, 'log': True},
         '3': {'title': '修改学校信息', 'action': Models.update_school, 'log': True},
@@ -39,7 +39,7 @@ class Main(Service):
         while retry_count < settings.LOGIN_ATTEMPTS:
             username = input("请输入管理员账号:>>").strip()
             password = input("请输入管理员密码:>>").strip()
-            if Auth.authenticate(**{'username': username, 'password': password, 'logger': Logger(cls.__log_type__)}):
+            if Auth.authenticate(**{'username': username, 'password': password, 'logger': Logger(cls.__log_type)}):
                 print('\033[92m登录成功\033[0m')
                 admin_authenticate = True
                 break
@@ -54,9 +54,9 @@ class Main(Service):
             cls.interactive(None)
 
     @classmethod
-    def interactive(cls,user):
+    def interactive(cls):
         option = 0
-        menu = cls.__admin_menu__
+        menu = cls.__admin_menu
         while not option:
             for k in menu:
                 print("%s.%s" % (k, menu[k]['title']))
@@ -67,6 +67,6 @@ class Main(Service):
                 continue
             kwargs = {}
             if menu[option]['log']:
-                kwargs['logger'] = Logger(cls.__log_type__)
+                kwargs['logger'] = Logger(cls.__log_type)
             menu[option]['action'](**kwargs)
             option = 0

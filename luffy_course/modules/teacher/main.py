@@ -10,9 +10,9 @@ from .auth import Auth
 
 
 class Main:
-    __log_type__ = 'teacher'
+    __log_type = 'teacher'
 
-    __teacher_menu__ = {
+    __teacher_menu = {
         '1': {'title': '查看个人信息', 'action': Models.profile, 'log': False},
         '2': {'title': '查看班级', 'action': Models.show_classes, 'log': True},
         '3': {'title': '查看学生', 'action': Models.show_students, 'log': False},
@@ -28,7 +28,7 @@ class Main:
         while retry_count < settings.LOGIN_ATTEMPTS:
             username = input("请输入讲师账户:>>").strip()
             password = input("请输入登录密码:>>").strip()
-            ret = Auth.authenticate(**{'username': username, 'password': password, 'logger': Logger(cls.__log_type__)})
+            ret = Auth.authenticate(**{'username': username, 'password': password, 'logger': Logger(cls.__log_type)})
             if ret:
                 print('\033[92m登录成功\033[0m')
                 teacher = ret
@@ -46,7 +46,7 @@ class Main:
     @classmethod
     def interactive(cls, user):
         option = 0
-        menu = cls.__teacher_menu__
+        menu = cls.__teacher_menu
         while not option:
             for k in menu:
                 print("%s.%s" % (k, menu[k]['title']))
@@ -57,6 +57,6 @@ class Main:
                 continue
             kwargs = {}
             if menu[option]['log']:
-                kwargs['logger'] = Logger(cls.__log_type__)
+                kwargs['logger'] = Logger(cls.__log_type)
             menu[option]['action'](user, **kwargs)
             option = 0
