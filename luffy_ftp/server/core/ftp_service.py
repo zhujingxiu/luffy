@@ -20,6 +20,8 @@ class FTPService:
         self.home_dir = None
         self.current_path = ""
         self.user_quota = 0
+        if not os.path.exists(settings.HOME_DIR):
+            os.mkdir(settings.HOME_DIR)
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         self.sock.bind(settings.ADDRESS)
@@ -92,6 +94,7 @@ class FTPService:
         FTP服务入口
         :return: 
         """
+
         print("服务已启动 %s:%s..." % (settings.HOST, settings.PORT))
         while True:
             try:

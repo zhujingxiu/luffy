@@ -13,6 +13,8 @@ from conf import settings
 class FTPService:
     def __init__(self, addr):
         try:
+            if not os.path.exists(settings.DOWNLOAD_DIR):
+                os.mkdir(settings.DOWNLOAD_DIR)
             self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             self.sock.connect_ex(addr)
         except ConnectionRefusedError as e:
@@ -75,7 +77,7 @@ class FTPService:
         except ConnectionResetError as e:
             exit("服务器错误：%s，请确认FTP服务器已开启" % e)
         else:
-            return recv_data
+            return recv_data.decode("utf-8")
 
     def send_file(self, filepath, has_sent=0):
         """
