@@ -61,7 +61,7 @@ class FTPService:
             response = self.sock.recv(4)  # 接收报头长度
             header_length = struct.unpack('i', response)  # 解出报头的长度
             head_info = self.sock.recv(header_length[0])  # 接收报头
-            header = json.loads(head_info)  # 解析报头
+            header = json.loads(head_info.decode("utf-8"))  # 解析报头
             content_length = header.get('content-length')
             recv_size = 0
             recv_data = b''  # 数据缓存区

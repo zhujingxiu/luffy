@@ -57,7 +57,7 @@ class FTPService:
             return False
         header_length = struct.unpack('i', response)  # 解出报头的长度
         head_info = self.conn.recv(header_length[0])  # 接收报头
-        header = json.loads(head_info)  # 解析报头
+        header = json.loads(head_info.decode("utf-8"))  # 解析报头
         content_length = header.get('content-length')
         filename = header.get('filename')
         filemode = header.get('filemode')
