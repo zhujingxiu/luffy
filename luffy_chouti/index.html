@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>路飞新热榜 - 最热</title>
+    <meta name="keywords" content="路飞新热榜,资讯,段子,图片,公众场合不宜,科技,新闻,节操,搞笑">
+    <meta name="robots" content="index,follow">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <script src="js/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <header class="header">
+        <div class="navbar">
+            <a href="#" class="logo"></a>
+            <div class="navbar-left">
+				<a href="#" class="nav active">全部</a>
+                <a href="#" class="nav">42区</a>
+                <a href="#" class="nav">段子</a>
+                <a href="#" class="nav">图片</a>
+                <a href="#" class="nav">挨踢1024</a>
+                <a href="#" class="nav">你问我答</a>
+			</div>
+            <div class="filter">
+                <form action="#" method="post" >
+                    <input type="text" class="filter-input" id="filterInp" style="background-color: rgb(244, 244, 244);">
+                    <a href="javascript:;" class="filter-btn" id="filterBtn"></a>
+                </form>
+		    </div>
+            <div class="navbar-right">
+                <a href="#" onclick="$('#loginDialog').show()" class="nav nologin">注册</a>
+                <a href="#" onclick="$('#loginDialog').show()" class="nav nologin">登录</a>
+                <a href="#" class="nav logged " style="display: none;position: relative;float: left">动态</a>
+                <a href="#" class="nav logged " style="display: none;position: relative;float: left">通知</a>
+                <a href="#" class="nav logged member" style="display: none;margin-left: 15px">
+                    <img src="images/avatar.png">
+                    <span class="name">用户</span>
+                </a>
+                <div class="member-menu">
+                    <a href="#" style="border-top:0;">我的新热榜</a>
+                    <a class="logout" href="javascript:;" id="memberLogout">退出</a>
+                </div>
+            </div>
+
+        </div>
+    </header>
+    <section class="container">
+        <div class="main-content">
+            <div class="content-left">
+                <div class="top-action">
+                    <div class="action-left">
+                        <a href="#" class="action active">最热</a>
+                        <a href="#" class="action">发现</a>
+                        <a href="#" class="action">人类发布</a>
+                    </div>
+
+                    <div class="action-right">
+                        <a href="javascript:;" class="publish" id="pubShare"> + 发布</a>
+                    </div>
+                    <div class="sort">
+                        <a href="#" class="active action" >即时排序</a>
+                        <a href="#" class="action" >24小时</a>
+                        <a href="#" class="action" >3天</a>
+                    </div>
+                </div>
+                <div class="articles">
+                    <div class="item">
+                        <div class="cover">
+                            <img src="images/pic1.jpg" >
+                        </div>
+                        <div class="detail" >
+                            <div class="summary">
+                                <a href="#" class="title" target="_blank">
+                                    柏木由紀 ヤングチャンピオン 2018年No.8号
+                                </a>
+                                <a href="#" class="tags"><span class="item-type">图片</span></a>
+                            </div>
+                            <div class="info">
+                                <a href="javascript:;" class="info-item" title="推荐">
+                                    <span class="info-icon icon-recommend"></span>
+                                    <b class="value">90</b>
+                                </a>
+                                <a href="javascript:;" class="info-item" title="2小时36分钟前">
+                                    <span class="info-icon icon-topic"></span>
+                                    <b class="value">45</b>
+                                </a>
+                                <a href="javascript:;" class="info-item" title="加入私藏" style="width: 69px;">
+                                    <span class="info-icon icon-collect"></span>
+                                    <b class="value nostrong">私藏</b>
+                                </a>
+                                <a href="javascript:;" class="info-item">
+                                    <span class="source"><img src="images/source1.jpg"></span>
+                                    <b class="value nostrong">一小只艺术家</b>
+                                </a>
+                                <span class="info-item">
+                                    <a href="#" target="_blank">
+                                        <b class="value nostrong colorange">6小时34分钟前</b>
+                                    </a>
+                                    <i class="into">入热榜</i>
+                                </span>
+                            </div>
+						</div>
+                </div>
+                    <div class="item">
+                        <div class="cover">
+                            <img src="images/pic2.jpg" >
+                        </div>
+                        <div class="detail" >
+                            <div class="summary">
+                                <a href="#" class="title" target="_blank">
+                                    新款 iPad、MacBook、iPhone SE 2……今晚的苹果发布会到底能看到哪些新产品？
+                                </a>
+                                <span class="web-source">-sspai.com</span>
+                                <a href="#" class="tags"><span class="item-type">挨踢1024</span></a>
+                            </div>
+                            <div class="description">
+                                <span class="trunks">今晚 11 点，苹果将在芝加哥召开一场教育主题的发布会，和往常的发布会不同，这次发布会甚至没有现场直播，而是在发布会结束后在官网放出录播视频，所以想看直播的读者可以洗洗睡了</span>
+                            </div>
+                            <div class="info">
+                                <a href="javascript:;" class="info-item" title="推荐">
+                                    <span class="info-icon icon-recommend"></span>
+                                    <b class="value">16</b>
+                                </a>
+                                <a href="javascript:;" class="info-item" title="2小时14分钟前">
+                                    <span class="info-icon icon-topic"></span>
+                                    <b class="value">34</b>
+                                </a>
+                                <a href="javascript:;" class="info-item" title="加入私藏" style="width: 69px;">
+                                    <span class="info-icon icon-collect"></span>
+                                    <b class="value nostrong">私藏</b>
+                                </a>
+                                <a href="javascript:;" class="info-item">
+                                    <span class="source"><img src="images/source2.jpg"></span>
+                                    <b class="value nostrong">royalflame</b>
+                                </a>
+                                <span class="info-item">
+                                    <a href="#" target="_blank">
+                                        <b class="value nostrong colorange">2小时14分钟前</b>
+                                    </a>
+                                    <i class="into">入热榜</i>
+                                </span>
+                            </div>
+						</div>
+                    </div>
+                    <div class="item">
+                        <div class="cover">
+                            <img src="images/pic3.jpg" >
+                        </div>
+                        <div class="detail" >
+                            <div class="summary">
+                                <a href="#" class="title" target="_blank">
+                                    黄秋生寻亲成功，与同父异母哥哥在香港首见面：是奇迹、不可思议
+                                </a>
+                                <span class="web-source">-news.ifeng.com</span>
+                                <a href="#" class="tags"><span class="item-type">42区</span></a>
+                            </div>
+                            <div class="info">
+                                <a href="javascript:;" class="info-item" title="推荐">
+                                    <span class="info-icon icon-recommend"></span>
+                                    <b class="value">69</b>
+                                </a>
+                                <a href="javascript:;" class="info-item" title="3小时19分钟前">
+                                    <span class="info-icon icon-topic"></span>
+                                    <b class="value">58</b>
+                                </a>
+                                <a href="javascript:;" class="info-item" title="加入私藏" style="width: 69px;">
+                                    <span class="info-icon icon-collect"></span>
+                                    <b class="value nostrong">私藏</b>
+                                </a>
+                                <a href="javascript:;" class="info-item">
+                                    <span class="source"><img src="images/source3.jpg"></span>
+                                    <b class="value nostrong">看新闻</b>
+                                </a>
+                                <span class="info-item">
+                                    <a href="#" target="_blank">
+                                        <b class="value nostrong colorange">3小时19分钟前</b>
+                                    </a>
+                                    <i class="into">入热榜</i>
+                                </span>
+                            </div>
+						</div>
+                </div>
+                    <div class="item">
+                        <div class="cover">
+                            <img src="images/pic4.jpg" >
+                        </div>
+                        <div class="detail" >
+                            <div class="summary">
+                                <a href="#" class="title" target="_blank">
+                                    <span class="kind-name">【段子】</span>
+                                    我的腰 ​
+                                </a>
+                                <span class="web-source">-wx3.sinaimg.cn</span>
+                            </div>
+                            <div class="info">
+                                <a href="javascript:;" class="info-item" title="推荐">
+                                    <span class="info-icon icon-recommend"></span>
+                                    <b class="value">80</b>
+                                </a>
+                                <a href="javascript:;" class="info-item" title="4小时39分钟前">
+                                    <span class="info-icon icon-topic"></span>
+                                    <b class="value">49</b>
+                                </a>
+                                <a href="javascript:;" class="info-item" title="加入私藏" style="width: 69px;">
+                                    <span class="info-icon icon-collect"></span>
+                                    <b class="value nostrong">私藏</b>
+                                </a>
+                                <a href="javascript:;" class="info-item">
+                                    <span class="source"><img src="images/source4.jpg"></span>
+                                    <b class="value nostrong">SC老木头鱼</b>
+                                </a>
+                                <span class="info-item">
+                                    <a href="#" target="_blank">
+                                        <b class="value nostrong colorange">4小时39分钟前</b>
+                                    </a>
+                                    <i class="into">入热榜</i>
+                                </span>
+                            </div>
+						</div>
+                    </div>
+                    <div class="item">
+                        <div class="cover">
+                            <img src="images/pic5.jpg" >
+                        </div>
+                        <div class="detail" >
+                            <div class="summary">
+                                <a href="#" class="title" target="_blank">
+                                    摄影师Rick Dobson拍摄到的一只正在捕猎的雪鸮，眼睛牢牢锁定它的猎物，这捕猎的姿态感觉有点魔性。。。
+                                </a>
+                                <a href="#" class="area"><span class="item-type">图片</span></a>
+
+                            </div>
+                            <div class="info">
+                                <a href="javascript:;" class="info-item" title="推荐">
+                                    <span class="info-icon icon-recommend"></span>
+                                    <b class="value">62</b>
+                                </a>
+                                <a href="javascript:;" class="info-item" title="5小时10分钟前">
+                                    <span class="info-icon icon-topic"></span>
+                                    <b class="value">28</b>
+                                </a>
+                                <a href="javascript:;" class="info-item" title="加入私藏" style="width: 69px;">
+                                    <span class="info-icon icon-collect"></span>
+                                    <b class="value nostrong">私藏</b>
+                                </a>
+                                <a href="javascript:;" class="info-item">
+                                    <span class="source"><img src="images/source5.jpg"></span>
+                                    <b class="value nostrong">英国报姐</b>
+                                </a>
+                                <span class="info-item">
+                                    <a href="#" target="_blank">
+                                        <b class="value nostrong colorange">5小时10分钟前</b>
+                                    </a>
+                                    <i class="into">入热榜</i>
+                                </span>
+                            </div>
+						</div>
+                </div>
+                    <div class="item">
+                        <div class="cover">
+                            <img src="images/pic6.jpg" >
+                        </div>
+                        <div class="detail" >
+                            <div class="summary">
+                                <a href="#" class="title" target="_blank">
+                                    昨天的迈阿密公开赛，休息时，34岁的老将沃达斯科向裁判抱怨对面科基纳基斯的背后总有人说话声音太大，干扰他发球。这时科基纳基斯问道：“你说的是我爸吧？”“阿？不是不是，是那个戴着眼镜和帽子的。”“你说哪个来着？那个戴帽子的？那tmd就是我爸(that’s my fxxking dad)。”“emmmmm不好意思。”
+                                </a>
+                                <a href="#" class="area"><span class="item-type">图片</span></a>
+
+                            </div>
+                            <div class="info">
+                                <a href="javascript:;" class="info-item" title="推荐">
+                                    <span class="info-icon icon-recommend"></span>
+                                    <b class="value">44</b>
+                                </a>
+                                <a href="javascript:;" class="info-item" title="5小时10分钟前">
+                                    <span class="info-icon icon-topic"></span>
+                                    <b class="value">7</b>
+                                </a>
+                                <a href="javascript:;" class="info-item" title="加入私藏" style="width: 69px;">
+                                    <span class="info-icon icon-collect"></span>
+                                    <b class="value nostrong">私藏</b>
+                                </a>
+                                <a href="javascript:;" class="info-item">
+                                    <span class="source"><img src="images/source6.jpg"></span>
+                                    <b class="value nostrong">ryan11</b>
+                                </a>
+                                <span class="info-item">
+                                    <a href="#" target="_blank">
+                                        <b class="value nostrong colorange">6小时17分钟前</b>
+                                    </a>
+                                    <i class="into">入热榜</i>
+                                </span>
+                            </div>
+						</div>
+                </div>
+                    <div class="item">
+                        <div class="cover">
+                            <img src="images/pic7.jpg" >
+                        </div>
+                        <div class="detail" >
+                            <div class="summary">
+                                <a href="#" class="title" target="_blank">
+                                    高德地图上线顺风车业务：不抽佣，成都武汉首发
+                                </a>
+                                <span class="web-source">-tech.sina.com.cn</span>
+                                <a href="#" class="tags"><span class="item-type">42区</span></a>
+                            </div>
+                            <div class="description">
+                                <span class="trunks">高德表示，该公益顺风车平台没有任何商业化目的，将坚持对用户不抽佣，也不会打补贴战</span>
+                            </div>
+                            <div class="info">
+                                <a href="javascript:;" class="info-item" title="推荐">
+                                    <span class="info-icon icon-recommend"></span>
+                                    <b class="value">77</b>
+                                </a>
+                                <a href="javascript:;" class="info-item" title="2小时14分钟前">
+                                    <span class="info-icon icon-topic"></span>
+                                    <b class="value">36</b>
+                                </a>
+                                <a href="javascript:;" class="info-item" title="加入私藏" style="width: 69px;">
+                                    <span class="info-icon icon-collect"></span>
+                                    <b class="value nostrong">私藏</b>
+                                </a>
+                                <a href="javascript:;" class="info-item">
+                                    <span class="source"><img src="images/source7.jpg"></span>
+                                    <b class="value nostrong">royalflame</b>
+                                </a>
+                                <span class="info-item">
+                                    <a href="#" target="_blank">
+                                        <b class="value nostrong colorange">6小时44分钟前</b>
+                                    </a>
+                                    <i class="into">入热榜</i>
+                                </span>
+                            </div>
+						</div>
+                    </div>
+                    <div class="item">
+                        <div class="cover">
+                            <img src="images/pic8.jpg" >
+                        </div>
+                        <div class="detail" >
+                            <div class="summary">
+                                <a href="#" class="title" target="_blank">
+                                    赚钱的最高境界。。。
+                                </a>
+                                <a href="#" class="tags"><span class="item-type">图片</span></a>
+                            </div>
+                            <div class="info">
+                                <a href="javascript:;" class="info-item" title="推荐">
+                                    <span class="info-icon icon-recommend"></span>
+                                    <b class="value">108</b>
+                                </a>
+                                <a href="javascript:;" class="info-item" title="2小时36分钟前">
+                                    <span class="info-icon icon-topic"></span>
+                                    <b class="value">106</b>
+                                </a>
+                                <a href="javascript:;" class="info-item" title="加入私藏" style="width: 69px;">
+                                    <span class="info-icon icon-collect"></span>
+                                    <b class="value nostrong">私藏</b>
+                                </a>
+                                <a href="javascript:;" class="info-item">
+                                    <span class="source"><img src="images/source8.jpg"></span>
+                                    <b class="value nostrong">北京人不知道的北京事儿</b>
+                                </a>
+                                <span class="info-item">
+                                    <a href="#" target="_blank">
+                                        <b class="value nostrong colorange">6小时54分钟前</b>
+                                    </a>
+                                    <i class="into">入热榜</i>
+                                </span>
+                            </div>
+                            <div class="commets" style="display: block">
+                                <a class="comment-close" title="关闭" href="javascript:;"></a>
+                                <div class="comment-body">
+                                    <div class="comment-header">
+                                        <span class="title">最热评论(<em>6</em>)</span>
+                                    </div>
+                                    <ul class="comment-main" style="background: none;">
+                                        <li class="items">
+                                            <div class="detail-left">
+                                                <a href="#">
+                                                    <img src="images/source3.jpg">
+                                                </a>
+                                            </div>
+                                            <div class="detail-right" style="background-color: rgb(246, 246, 246);">
+                                                <div class="user">
+                                                    <a class="name" href="#">屉头酱</a>
+                                                    <span class="text">庄垫台？</span>
+                                                    <span class="intotime">1分钟前发布</span>
+                                                </div>
+                                                <div class="comment-actions" style="display: none;">
+                                                    <div class="comment-state">
+                                                        <a class="ding" href="javascript:;">
+                                                            <b>顶</b>
+                                                            <span class="ding-num">[2]</span>
+                                                        </a>
+                                                        <a class="cai" href="javascript:;">
+                                                            <b>踩</b>
+                                                            <span class="cai-num">[0]</span>
+                                                        </a>
+                                                        <span class="line-sep">|</span>
+                                                        <a class="see-a multreplay" href="javascript:;">回复</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li class="items last">
+                                            <div class="detail-left">
+                                                <a href="#">
+                                                    <img src="images/source8.jpg">
+                                                </a>
+                                            </div>
+                                            <div class="detail-right" style="background-color: rgb(246, 246, 246);">
+                                                <div class="user">
+                                                    <a class="name" href="#">钦定的男人</a>
+                                                    <span class="text">表演悬浮术</span>
+                                                    <span class="intotime">36分钟前发布</span>
+                                                    <span class="intotime">
+                                                        来自<a class="phone-kind" href="#" target="_blank">Android</a>
+                                                    </span>
+                                                </div>
+                                                <div class="comment-actions" style="display: none;">
+                                                    <div class="comment-state">
+                                                        <a class="ding" href="javascript:;">
+                                                            <b>顶</b>
+                                                            <span class="ding-num">[1]</span>
+                                                        </a>
+                                                        <a class="cai" href="javascript:;">
+                                                            <b>踩</b>
+                                                            <span class="cai-num">[0]</span>
+                                                        </a>
+                                                        <span class="line-sep">|</span>
+                                                        <a class="see-a multreplay" href="javascript:;">回复</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="reply" style="display: block;">
+										<div class="reply-box">
+                                            <div class="lab-comment-top" style="display: none;">
+                                                回复  <span></span>:
+                                            </div>
+                                            <textarea maxlength="150" class="reply-text" style="text-indent: 0; height: 40px; resize: vertical; border: 1px solid rgb(204, 220, 239);"></textarea>
+										</div>
+										<div class="reply-btn">
+											<a  href="javascript:;" class="reply-submit">评论</a>
+										</div>
+									</div>
+                                    <div class="comment-hidden"  style="display: block;">
+										<a href="javascript:;" class="hidden-btn" ><em class="hidden-icon"></em><span>收起</span></a>
+									</div>
+                                </div>
+                            </div>
+						</div>
+                    </div>
+                </div>
+                <div class="pagination">
+                    <div class="pagelist">
+                        <ul>
+                            <li><a href="#" class="jumppage">上一页</a></li>
+                            <li><a href="#" class="page">1</a></li>
+                            <li><span class="curpage">2</span></li>
+                            <li><a href="#" class="page">3</a></li>
+                            <li><a href="#" class="page">4</a></li>
+                            <li><a href="#" class="page">5</a></li>
+                            <li><a href="#" class="page">6</a></li>
+                            <li><a href="#" class="page">7</a></li>
+                            <li><a href="#" class="page">8</a></li>
+                            <li><a href="#" class="page">9</a></li>
+                            <li><a href="#" class="page">10</a></li>
+                            <li><a href="#" class="jumppage">下一页</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="content-right">
+                <div class="welfare">
+                    <a  href="#" target="_blank">
+                        <img src="images/report.png">
+                    </a>
+                    <a style="margin-left: 10px;" href="#" target="_blank">
+                        <img src="images/report_children.png">
+                    </a>
+                </div>
+                <a target="_blank" href="#" style="margin-top: 12px;">
+                    <img src="images/homepage_download.png">
+                </a>
+                <div class="top-rank">
+                    <div class="top-title" >24小时 全部<span> TOP 10</span></div>
+                    <div class="top-rank-title" >
+                        <a class="no-comment-title">最热榜</a>
+                    </div>
+                    <div id="top-rank-list">
+                        <div class="rank-item">
+                            <div class="rank-hots">
+                                <a href="#" class="hotid">333</a>
+                            </div>
+                            <a class="rank-text" href="#" target="_blank">第九届金扫帚奖毕志飞王宝强获最令人失望导演，王宝强成首位到场领奖的一线明星。</a>
+                        </div>
+
+                        <div class="rank-item">
+                            <div class="rank-hots">
+                                <a href="#" class="hotid">240</a>
+                            </div>
+                            <a class="rank-text" href="#" target="_blank">少年时，举止得当；青年时，学会自制；中年时，正义行事；老年时，良言善导；临终时，死而无憾。（阿伊-哈努姆基尼斯神庙残碑碑座铭文，公元前三世纪初）@redneckbunny</a>
+                        </div>
+
+                        <div class="rank-item">
+                            <div class="rank-hots">
+                                <a href="#" class="hotid">202</a>
+                            </div>
+                            <a class="rank-text" href="#" target="_blank">用鲣鱼干做刀的小哥这次改用锡箔纸了，不得不说很谜很厉害，真是啥都能做成刀惹 Cr：kiwami japan</a>
+                        </div>
+                        <div class="rank-item">
+                            <div class="rank-hots">
+                                <a href="#" class="hotid">138</a>
+                            </div>
+                            <a class="rank-text" href="#" target="_blank">【外交部征求意见：公民不听劝前往危险地区，国家不免费救】《中华人民共和国领事保护与协助工作条例(草案)》(征求意见稿)其中规定，中国公民应当密切关注欲前往国家或已在国家的有关安全提醒，在相应安全提醒发布后仍坚持前往有关高风险国家或地区的，因协助而产生的费用由个人承担。</a>
+                        </div>
+                        <div class="rank-item">
+                            <div class="rank-hots">
+                                <a href="#" class="hotid">149</a>
+                            </div>
+                            <a class="rank-text" href="#" target="_blank">做了个简易的表格，方便看三国里的名臣悍将，他们各个年龄段都在干些什么。</a>
+                        </div>
+
+                        <div class="rank-item">
+                            <div class="rank-hots">
+                                <a href="#" class="hotid">142</a>
+                            </div>
+                            <a class="rank-text" href="#" target="_blank">柏木由紀 ヤングチャンピオン 2018年No.8号</a>
+                        </div>
+
+                        <div class="rank-item">
+                            <div class="rank-hots">
+                                <a href="#" class="hotid">130</a>
+                            </div>
+                            <a class="rank-text" href="#" target="_blank">吸蜜蜂鸟，全世界最小的鸟……虽然比蜜蜂大不了多少，但是羽毛依然绚烂无比～</a>
+                        </div>
+
+                        <div class="rank-item">
+                            <div class="rank-hots">
+                                <a href="#" class="hotid">119</a>
+                            </div>
+                            <a class="rank-text" href="#" target="_blank">桃李杏樱海棠……又双叒叕开花了！脸盲吗？看这个！</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="footer-top">
+                <a href="#" target="_blank">关于我们</a>
+                <span>|</span>
+                <a href="#" target="_blank">联系我们</a>
+                <span>|</span>
+                <a href="#" target="_blank">服务条款</a>
+                <span>|</span>
+                <a href="#" target="_blank">隐私政策</a>
+                <span>|</span>
+                <a href="#" target="_blank">抽屉新热榜工具</a>
+                <span>|</span>
+                <a href="#" target="_blank">下载客户端</a>
+                <span>|</span>
+                <a href="#" target="_blank">意见与反馈</a>
+                <span>|</span>
+                <a href="#" target="_blank">友情链接</a>
+                <span>|</span>
+                <a href="#" target="_blank">公告</a>
+            </div>
+            <div class="footer-bottom">
+                <span >路飞旗下站点</span>
+                <span >©2018luffycity.com</span>
+                <a target="_blank" href="http://www.miibeian.gov.cn/" style="color: #999;font-size: 12px;">京ICP备09053974号-3 京公网安备 110102004562</a>
+                <div style="margin-top:6px;">
+                    <span>违法和不良信息举报：</span>
+                    <span>电话：010-58302039  </span>
+                </div>
+                <div style="margin-top:6px;">版权所有：北京路飞科技有限公司</div>
+            </div>
+        </footer>
+    </section>
+    <div class="dialog dialog-mask" style="display: none" id="pubDialog">
+        <div class="dialog-container">
+            <div class="dialog-body" style="width: 490px;">
+                <div class="box-header" style="border-radius:5px 5px 0 0;">
+                    <span>分享新发现</span>
+                    <div style="position:absolute;right:8px;top:8px;width:15px;height:15px;">
+                        <div class="btn-close dialog-btn-close"></div>
+                    </div>
+                </div>
+                <div class="box-publish form-list" style="border-radius:0 0 5px 5px;">
+                    <form action="" enctype="multipart/form-data" method="post">
+                        <div class="err-msg"></div>
+                        <div class="form-group">
+                            <label for="inputLink">添加链接</label>
+                            <input type="text" class="form-control" id="inputLink" placeholder="链接">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputTitle">添加标题</label>
+                            <input type="text" class="form-control" id="inputTitle" placeholder="标题">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputFile">添加图片</label>
+                            <div class="form-file" id="inputFile">
+                                <span class="btn btn-upload">上传</span>
+                                <input type="file" class="btn-upload-entry">
+                                <input type="hidden" name="cover">
+                                <span class="img-rule">支持jpg、jpeg、gif、png格式，且不超5MB <span style="color: darkred;">暂不支持上传</span></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputSummary">添加摘要（选填）</label>
+                            <textarea style="height: 50px;" class="form-control" id="inputSummary" placeholder="摘要"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputSummary">发布到:</label>
+                            <div class="input-line">
+                                <a href="javacript:;" data-rel="42区" class="channel active">42区</a>
+                                <a href="javacript:;" data-rel="段子" class="channel">段子</a>
+                                <a href="javacript:;" data-rel="图片" class="channel">图片</a>
+                                <input type="hidden" name="channel" value="42区">
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <a class="btn btn-link btn-reset">清空</a>
+                            <div class="btn btn-publish">
+                                <span>发布</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="dialog dialog-mask" style="display: none" id="loginDialog">
+        <div class="dialog-container">
+            <div class="dialog-body" style="padding-left: 350px;">
+                <div class="box-login">
+                    <div class="box-header box-active" style="border-radius:5px 0 0 0;">登录</div>
+                    <div class="body-login" style="border-radius:0 0 0 5px;">
+                        <div class="tab-box">
+                            <span class="active" data-rel="box-mobilelogin" style="margin-right:10px;">手机号登录</span>|
+                            <span data-rel="box-idlogin" style="margin-left:10px;">用户名登录</span>
+                        </div>
+                        <div class="box-login-item box-mobilelogin">
+                            <div class="err-msg"></div>
+                            <div>
+                                <select class="region">
+                                    <option value="86">中国(+86)</option>
+                                    <option value="852">中国香港(+852)</option>
+                                    <option value="853">中国澳门(+853)</option>
+                                    <option value="886">中国台湾(+886)</option>
+                                    <option value="1">美国(+1)</option>
+                                </select>
+                            </div>
+                            <form class="form-mobilelogin" action="#">
+                                <div class="pr"><input type="text" value="13813801380" placeholder="手机号" class="identity mobile" ></div>
+                                <div class="pr"><input type="password" value="luffy" placeholder="密码" class="password mbpwd" ></div>
+                            </form>
+                        </div>
+
+                        <div class="box-login-item box-idlogin" style="display:none;">
+                            <div class="err-msg"></div>
+                            <form class="form-idlogin" action="#" >
+                                <div class="pr"><input type="text" value="13813801380" placeholder="用户名" class="identity userid" ></div>
+                                <div class="pr"><input type="password" value="luffy" placeholder="密码" class="password pwd" ></div>
+                            </form>
+                        </div>
+
+                        <div class="box-btn">
+                            <div style="position:relative;margin-bottom:20px;">
+                                <span><input type="checkbox" class="keeplogin" value="1" checked="">一个月内自动登录</span>
+                                <span class="fgtpwd"><a href="#">忘记密码?</a></span>
+                            </div>
+                            <div>
+                                <div class="btn btn-login">
+                                    <span>登录</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-header" style="border-radius:0 5px 0 0;">
+                    <span>注册</span>
+                    <div style="position:absolute;right:8px;top:8px;width:15px;height:15px;">
+                        <div class="btn-close dialog-btn-close"></div>
+                    </div>
+                </div>
+                <div class="box-register" style="border-radius:0 0 5px 0;">
+                    <div class="step-box">
+                        <span class="step step-1 step-active">1 填写手机号</span>
+                        <span> &gt; </span>
+                        <span class="step step-2">2 填写基本资料</span>
+                    </div>
+
+                    <div class="box-register-mobile">
+                        <div class="err-msg"></div>
+                        <div>
+                            <select class="rgmobileregion">
+                                <option value="86">中国(+86)</option>
+                                <option value="852">中国香港(+852)</option>
+                                <option value="853">中国澳门(+853)</option>
+                                <option value="886">中国台湾(+886)</option>
+                                <option value="1">美国(+1)</option>
+                            </select>
+                        </div>
+                        <div class="pr">
+                            <input type="text" placeholder="手机号" style="width:110px;margin-right:6px;" class="rgmobile">
+                            <div class="btn btn-getcode">获取验证码</div>
+                            <div style="text-align:right;margin-top:5px;" class="box-voicecode">
+                                <span>收不到短信？<a class="btn-getvoicecode" href="#">获取语音验证码</a></span>
+                            </div>
+                        </div>
+                        <div class="pr"><input type="text" placeholder="验证码" class="rgcode"></div>
+                        <div class="pr"><input type="password" placeholder="密码" class="rgpwd"></div>
+                        <div>
+                            <div class="btn btn-register">
+                                <span>下一步</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
