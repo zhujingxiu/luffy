@@ -1,0 +1,103 @@
+[{
+	"text": "三国",
+	"icon": "glyphicon glyphicon-book",
+	"tags": ["6"],
+	"state": {
+		"expanded": true,
+		"selected": true
+	},
+	"nodes": [{
+		"text": "曹操",
+		"icon": "glyphicon glyphicon-user",
+		"tags": ["+"]
+	}, {
+		"text": "郭嘉",
+		"icon": "glyphicon glyphicon-user",
+		"tags": ["+"]
+	}, {
+		"text": "刘备",
+		"icon": "glyphicon glyphicon-user",
+		"tags": ["+"]
+	}, {
+		"text": "诸葛亮",
+		"icon": "glyphicon glyphicon-user",
+		"tags": ["+"]
+	}, {
+		"text": "孙权",
+		"icon": "glyphicon glyphicon-user",
+		"tags": ["+"]
+	}, {
+		"text": "陆逊",
+		"icon": "glyphicon glyphicon-user",
+		"tags": ["+"]
+	}]
+}, {
+	"text": "西游",
+	"icon": "glyphicon glyphicon-book",
+	"tags": ["6"],
+	"state": {
+		"expanded": false,
+		"selected": false
+	},
+	"nodes": [{
+		"text": "唐僧",
+		"icon": "glyphicon glyphicon-user",
+		"tags": ["+"]
+	}, {
+		"text": "孙悟空",
+		"icon": "glyphicon glyphicon-user",
+		"tags": ["+"]
+	}, {
+		"text": "猪八戒",
+		"icon": "glyphicon glyphicon-user",
+		"tags": ["+"]
+	}, {
+		"text": "沙和尚",
+		"icon": "glyphicon glyphicon-user",
+		"tags": ["+"]
+	}, {
+		"text": "观音",
+		"icon": "glyphicon glyphicon-user",
+		"tags": ["+"]
+	}, {
+		"text": "白龙马",
+		"icon": "glyphicon glyphicon-user",
+		"tags": ["+"]
+	}]
+}, {
+	"text": "水浒",
+	"icon": "glyphicon glyphicon-book",
+	"tags": ["6"],
+	"state": {
+		"expanded": false,
+		"selected": false
+	},
+	"nodes": [{
+		"text": "宋江",
+		"icon": "glyphicon glyphicon-user",
+		"tags": ["+"]
+	}, {
+		"text": "武松",
+		"icon": "glyphicon glyphicon-user",
+		"tags": ["+"]
+	}, {
+		"text": "李逵",
+		"icon": "glyphicon glyphicon-user",
+		"tags": ["+"]
+	}, {
+		"text": "鲁智深",
+		"icon": "glyphicon glyphicon-user",
+		"tags": ["+"]
+	}, {
+		"text": "卢俊义",
+		"icon": "glyphicon glyphicon-user",
+		"tags": ["+"]
+	}, {
+		"text": "林冲",
+		"icon": "glyphicon glyphicon-user",
+		"tags": ["+"]
+	}]
+}, {
+	"text": "添加房间",
+	"icon": "glyphicon glyphicon-edit"
+}]

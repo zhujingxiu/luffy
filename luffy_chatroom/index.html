@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>路飞聊天室</title>
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="" class="navbar-brand">路飞聊天室</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="">
+                            <span class="glyphicon glyphicon glyphicon-log-in"></span> 登录
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+
+                <ul id="tabMenu" class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active">
+                        <a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">
+                            <span class="glyphicon glyphicon-tree-deciduous"></span> 房间
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">
+                            <span class="glyphicon glyphicon-fire"></span> 我的好友
+                        </a>
+                    </li>
+                </ul>
+                <div id="myTabContent" class="tab-content" style="margin: 10px 0">
+                    <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+                        <div id="tree-room"></div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
+                        <div id="tree-friend"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-9">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Panel heading without title</div>
+                    <div class="panel-body">
+                        Basic panel example
+                    </div>
+                    <div class="panel-footer">Panel footer</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/bootstrap-treeview/bootstrap-treeview.min.js"></script>
+    <script type="text/javascript">
+        var get_room = function () {
+            var room = localStorage.getItem('room');
+            if(!room) {
+                $.get('assets/data/room.json', {_r: Math.random()}, function (json) {
+                    console.log(JSON.stringify(json))
+                    localStorage.setItem('room',JSON.stringify(json));
+                })
+            }
+            return room;
+        }
+        get_room()
+
+    </script>
+</body>
+</html>
