@@ -1,4 +1,5 @@
 [{
+	"gid": 1,
 	"text": "三国",
 	"icon": "glyphicon glyphicon-book",
 	"tags": ["6"],
@@ -7,31 +8,38 @@
 		"selected": true
 	},
 	"nodes": [{
+		"uid": 11,
 		"text": "曹操",
 		"icon": "glyphicon glyphicon-user",
-		"tags": ["+"]
+		"avatar": "02.jpg"
 	}, {
+		"uid": 12,
 		"text": "郭嘉",
 		"icon": "glyphicon glyphicon-user",
-		"tags": ["+"]
+		"avatar": "04.png"
 	}, {
+		"uid": 13,
 		"text": "刘备",
 		"icon": "glyphicon glyphicon-user",
-		"tags": ["+"]
+		"avatar": "05.png"
 	}, {
+		"uid": 14,
 		"text": "诸葛亮",
 		"icon": "glyphicon glyphicon-user",
-		"tags": ["+"]
+		"avatar": "06.png"
 	}, {
+		"uid": 15,
 		"text": "孙权",
 		"icon": "glyphicon glyphicon-user",
-		"tags": ["+"]
+		"avatar": "07.png"
 	}, {
+		"uid": 16,
 		"text": "陆逊",
 		"icon": "glyphicon glyphicon-user",
-		"tags": ["+"]
+		"avatar": "08.jpg"
 	}]
 }, {
+	"gid": 2,
 	"text": "西游",
 	"icon": "glyphicon glyphicon-book",
 	"tags": ["6"],
@@ -40,31 +48,38 @@
 		"selected": false
 	},
 	"nodes": [{
+		"uid": 21,
 		"text": "唐僧",
 		"icon": "glyphicon glyphicon-user",
-		"tags": ["+"]
+		"avatar": "09.jpg"
 	}, {
+		"uid": 22,
 		"text": "孙悟空",
 		"icon": "glyphicon glyphicon-user",
-		"tags": ["+"]
+		"avatar": "10.jpg"
 	}, {
+		"uid": 23,
 		"text": "猪八戒",
 		"icon": "glyphicon glyphicon-user",
-		"tags": ["+"]
+		"avatar": "11.jpg"
 	}, {
+		"uid": 24,
 		"text": "沙和尚",
 		"icon": "glyphicon glyphicon-user",
-		"tags": ["+"]
+		"avatar": "12.jpg"
 	}, {
+		"uid": 25,
 		"text": "观音",
 		"icon": "glyphicon glyphicon-user",
-		"tags": ["+"]
+		"avatar": "13.jpg"
 	}, {
+		"uid": 26,
 		"text": "白龙马",
 		"icon": "glyphicon glyphicon-user",
-		"tags": ["+"]
+		"avatar": "15.jpg"
 	}]
 }, {
+	"gid": 3,
 	"text": "水浒",
 	"icon": "glyphicon glyphicon-book",
 	"tags": ["6"],
@@ -73,31 +88,34 @@
 		"selected": false
 	},
 	"nodes": [{
+		"uid": 31,
 		"text": "宋江",
 		"icon": "glyphicon glyphicon-user",
-		"tags": ["+"]
+		"avatar": "16.jpg"
 	}, {
+		"uid": 32,
 		"text": "武松",
 		"icon": "glyphicon glyphicon-user",
-		"tags": ["+"]
+		"avatar": "17.png"
 	}, {
+		"uid": 33,
 		"text": "李逵",
 		"icon": "glyphicon glyphicon-user",
-		"tags": ["+"]
+		"avatar": "18.jpg"
 	}, {
+		"uid": 33,
 		"text": "鲁智深",
 		"icon": "glyphicon glyphicon-user",
-		"tags": ["+"]
+		"avatar": "18.jpg"
 	}, {
+		"uid": 34,
 		"text": "卢俊义",
 		"icon": "glyphicon glyphicon-user",
-		"tags": ["+"]
+		"avatar": "19.jpg"
 	}, {
+		"uid": 35,
 		"text": "林冲",
 		"icon": "glyphicon glyphicon-user",
-		"tags": ["+"]
+		"avatar": "20.jpg"
 	}]
-}, {
-	"text": "添加房间",
-	"icon": "glyphicon glyphicon-edit"
 }]

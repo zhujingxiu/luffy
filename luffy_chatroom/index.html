@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>路飞聊天室</title>
     <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/summernote/summernote.css" rel="stylesheet">
+    <link href="assets/summernote/plugin/summernote-emoji/emoji.css" rel="stylesheet">
+    <link href="assets/summernote/plugin/twemoji-awesome.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
 </head>
 <body>
     <header class="navbar navbar-default navbar-static-top">
@@ -15,10 +20,23 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="">
+                    <li class="login-item">
+                        <a href="javascript:void(0);"  data-toggle="modal" data-target="#loginModal">
                             <span class="glyphicon glyphicon glyphicon-log-in"></span> 登录
                         </a>
+                    </li>
+                    <li class="dropdown user-info" style="display: none">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">
+                            <img src="assets/images/avatar/lf.png" alt="">
+                            <span class="username">路飞</span>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" onclick="luffy.edit_password();">修改密码</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#" id="logoutBtn">注销登录</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -42,42 +60,235 @@
                 </ul>
                 <div id="myTabContent" class="tab-content" style="margin: 10px 0">
                     <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
-                        <div id="tree-room"></div>
+                        <div id="treeGroup"></div>
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
-                        <div id="tree-friend"></div>
+                        <div id="treeFriend"></div>
                     </div>
                 </div>
 
             </div>
             <div class="col-md-9">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Panel heading without title</div>
-                    <div class="panel-body">
-                        Basic panel example
+                <div class="panel panel-default" id="chatPanel" data-rel="2">
+                    <div id="chatHeader" class="panel-heading" style="min-height: 96px">
+                        <div class="chat-title">
+                            <div class="chat-other">
+                                <img src="assets/images/avatar/00.jpg" alt="">
+                                <span class="chat-username">朱景修</span>
+                                <p class="chat-status"><span style="color:#FF5722;">在线</span></p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="panel-footer">Panel footer</div>
+                    <div id="chatBody" class="panel-body" style="min-height:320px;height: 80%;overflow-y: scroll;">
+                        <div class="chat-main" >
+                            <ul class="chat-box" id="chatLogs">
+                                <li class="chat-mine">
+                                    <div class="chat-user">
+                                        <img src="assets/images/avatar/00.jpg" alt="">
+                                        <cite>
+                                            <i>2018-04-02 16:04:46</i>
+                                            朱景修
+                                        </cite>
+                                    </div>
+                                    <div class="chat-text">
+                                        登录后，请选择左侧列表中好友开始聊天<iframe frameborder="0" class="twa twa-speech-balloon"></iframe>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chat-user">
+                                        <img src="assets/images/avatar/01.png" alt="">
+                                        <cite>
+                                            纸飞机
+                                            <i>2018-04-02 16:04:51</i>
+                                        </cite>
+                                    </div>
+                                    <div class="chat-text">
+                                        (*^__^*) <iframe frameborder="0" class="twa twa-smile"></iframe> ，是路飞吗？
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel-footer" style="padding-bottom: 50px;">
+                        <div class="msg-body">
+                            <textarea name="" id="msgText" cols="30" rows="10"></textarea>
+                        </div>
+                        <div class="buttons pull-right">
+                            <button id="sendMsg" class="btn btn-primary">发送(S)</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <footer>
+        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
+            <div class="modal-dialog" >
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="loginModalLabel">账户登录</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="loginUser">
+                            <div class="form-group">
+                                <label for="inputUser">帐号</label>
+                                <input type="text" class="form-control" id="inputUser" placeholder="帐号" value="luffy">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword">密码</label>
+                                <input type="password" class="form-control" id="inputPassword" value="luffy" placeholder="密码">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button id="loginSubmit" type="button" class="btn btn-primary">登录</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="friendModal" tabindex="-1" role="dialog" aria-labelledby="friendModalLabel">
+            <div class="modal-dialog" >
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="friendModalLabel">添加好友</h4>
+                    </div>
+                    <div class="modal-body ">
+                        <form id="addFriend">
+                            <div class="friend-info">
+                                <div class="friend-info-avatar">
+                                    <img src="assets/images/avatar/00.jpg" alt="">
+                                    <p>sss</p>
+                                    <input type="hidden" name="friend_id">
+                                </div>
+                            </div>
+                            <div class="friend-remark">
+                                <label for="inputRemark">请输入验证信息</label>
+                                <textarea class="form-control" id="inputRemark"  placeholder="验证信息"></textarea>
+                            </div>
 
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button id="friendSubmit" type="button" class="btn btn-primary">发送申请</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/base.js"></script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/bootstrap-treeview/bootstrap-treeview.min.js"></script>
+    <script src="assets/summernote/summernote.js"></script>
+    <script src="assets/summernote/lang/summernote-zh-CN.js"></script>
+    <script src="assets/summernote/plugin/summernote-emoji/emoji.js"></script>
+    <script src="assets/js/BootstrapMenu.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script type="text/javascript">
-        var get_room = function () {
-            var room = localStorage.getItem('room');
-            if(!room) {
-                $.get('assets/data/room.json', {_r: Math.random()}, function (json) {
-                    console.log(JSON.stringify(json))
-                    localStorage.setItem('room',JSON.stringify(json));
-                })
+        $(document).ready(function () {
+            luffy.init_user();
+            luffy.render_textarea('msgText');
+            var member = luffy.check_logged();
+            if(!member.uid){
+                $('.user-info').css('display','none');
+            }else{
+                $('.user-info img').attr('src','assets/images/avatar/'+member.avatar).next('.username').html(member.nickname);
+                $('.user-info').css('display','block');
+                $('.login-item').css('display','none');
             }
-            return room;
-        }
-        get_room()
 
+            $('#treeGroup').treeview({
+                data:luffy.render_group()
+            }).on('nodeSelected',function(event, data) {
+                var member = luffy.check_logged();
+                if(!member){
+                    $('.login-item > a:first').trigger('click');
+                    return false;
+                }
+                if(data.uid > 0){
+                    $('#chatHeader .chat-other > img').attr('src','assets/images/avatar/'+data.avatar);
+                    $('#chatHeader .chat-other .chat-username').html(data.text);
+                    $('#chatPanel').attr('data-rel',data.uid);
+                    $('#chatLogs').html(luffy.render_logs(member.uid,data.uid));
+                    $('#chatBody').animate({scrollTop: $('#chatLogs').innerHeight()},'slow');
+                }
+            });
+            console.log('初始化房间列表');
+            $('#treeFriend').treeview({
+                data:luffy.render_friend()
+            }).on('nodeSelected',function(event, data) {
+                var member = luffy.check_logged();
+                if(!member){
+                    $('.login-item > a:first').trigger('click');
+                    return false;
+                }
+                $('#chatHeader .chat-other > img').attr('src','assets/images/avatar/'+data.avatar);
+                $('#chatHeader .chat-other .chat-username').html(data.text);
+                $('#chatPanel').attr('data-rel',data.uid);
+                $('#chatLogs').html(luffy.render_logs(member.uid,data.uid));
+                $('#chatBody').animate({scrollTop: $('#chatLogs').innerHeight()},'slow');
+            });
+            console.log('初始化好友列表');
+            var group_menu = luffy.init_menu('treeGroup');
+            var friend_menu = luffy.init_menu('treeFriend');
+        });
+
+        $('#sendMsg').on('click',function () {
+            var member = luffy.check_logged();
+            if(!member){
+                $('.login-item > a:first').trigger('click');
+                return false;
+            }
+            var _uid = $('#chatPanel').data('rel');
+            var _msg = $('#msgText').summernote('code');
+
+            $('#chatLogs').append(luffy.send_msg(member,_uid,_msg,true));
+            $('#chatBody').animate({scrollTop: $('#chatLogs').innerHeight()},'slow');
+            $('#msgText').summernote('code','');
+            setTimeout(function () {
+                $('#chatLogs').append(luffy.auto_reply(_uid));
+            },1000);
+            $('#chatBody').animate({scrollTop: $('#chatLogs').innerHeight()},'slow');
+        });
+
+        $('#loginSubmit').on('click',function () {
+            var _username = $('#inputUser').val();
+            var _password = $('#inputPassword').val();
+            if(_username == ''){
+                $('#inputUser').parent('.form-group').removeClass('has-error').addClass('has-error');
+                toastr.warning('用户名不得为空');
+                return false;
+            }else{
+                $('#inputUser').parent('.form-group').removeClass('has-error');
+            }
+            if(_password == ''){
+                $('#inputPassword').parent('.form-group').removeClass('has-error').addClass('has-error');
+                toastr.warning('密码不得为空');
+                return false;
+            }else{
+                $('#inputPassword').parent('.form-group').removeClass('has-error');
+            }
+            luffy.login(_username,_password);
+
+        });
+        $('#logoutBtn').on('click',function () {
+            luffy.logout()
+        });
+        $('#friendSubmit').on('click',function () {
+            var member = luffy.check_logged();
+            if(!member){
+                $('.login-item > a:first').trigger('click');
+                return false;
+            }
+            luffy.add_friend($('input[name="friend_id"]').val(),$('#inputRemark').val());
+        })
     </script>
+
 </body>
 </html>

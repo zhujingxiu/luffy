@@ -1,0 +1,135 @@
+[{
+	"uid": 1,
+	"username": "luffy",
+	"nickname": "路飞",
+	"password": "luffy",
+	"avatar": "lf.png"
+} ,{
+	"uid": 2,
+	"username": "zhujingxiu",
+	"nickname": "朱景修",
+	"password": "zhujingxiu",
+	"avatar": "00.jpg"
+} ,{
+	"uid": 3,
+	"username": "wukong",
+	"nickname": "悟空",
+	"password": "wukong",
+	"avatar": "19.jpg"
+
+} ,{
+	"uid": 4,
+	"username": "demo",
+	"nickname": "演示",
+	"password": "demo",
+	"avatar": "01.png"
+
+},{
+	"uid": 11,
+	"username": "caocao",
+	"nickname": "曹操",
+	"password": "caocao",
+	"avatar": "02.jpg"
+
+}, {
+	"uid": 12,
+	"username": "caocao",
+	"nickname": "郭嘉",
+	"avatar": "04.png"
+}, {
+	"uid": 13,
+	"nickname": "刘备",
+	"username": "liubei",
+	"password": "liubei",
+	"avatar": "05.png"
+}, {
+	"uid": 14,
+	"nickname": "诸葛亮",
+	"username": "kongming",
+	"password": "kongming",
+	"avatar": "06.png"
+}, {
+	"uid": 15,
+	"nickname": "孙权",
+	"username": "sunquan",
+	"password": "sunquan",
+	"avatar": "07.png"
+}, {
+	"uid": 16,
+	"nickname": "陆逊",
+	"username": "luxun",
+	"password": "luxun",
+	"avatar": "08.jpg"
+},{
+	"uid": 21,
+	"nickname": "唐僧",
+	"username": "tangsen",
+	"password": "tangsen",
+	"avatar": "09.jpg"
+}, {
+	"uid": 22,
+	"nickname": "孙悟空",
+	"username": "wukong",
+	"password": "wukong",
+	"avatar": "10.jpg"
+}, {
+	"uid": 23,
+	"nickname": "猪八戒",
+	"username": "wuneng",
+	"password": "wuneng",
+	"avatar": "11.jpg"
+}, {
+	"uid": 24,
+	"nickname": "沙和尚",
+	"username": "wujing",
+	"password": "wujing",
+	"avatar": "12.jpg"
+}, {
+	"uid": 25,
+	"nickname": "观音",
+	"username": "guanyin",
+	"password": "guanyin",
+	"avatar": "13.jpg"
+}, {
+	"uid": 26,
+	"nickname": "白龙马",
+	"username": "bailong",
+	"password": "bailong",
+	"avatar": "15.jpg"
+},{
+	"uid": 31,
+	"nickname": "宋江",
+	"username": "songjiang",
+	"password": "songjiang",
+	"avatar": "16.jpg"
+}, {
+	"uid": 32,
+	"nickname": "武松",
+	"username": "wusong",
+	"password": "wusong",
+	"avatar": "17.png"
+}, {
+	"uid": 33,
+	"nickname": "李逵",
+	"username": "likui",
+	"password": "likui",
+	"avatar": "18.jpg"
+}, {
+	"uid": 33,
+	"nickname": "鲁智深",
+	"username": "luzhishen",
+	"password": "luzhishen",
+	"avatar": "18.jpg"
+}, {
+	"uid": 34,
+	"nickname": "卢俊义",
+	"username": "lujunyi",
+	"password": "lujunyi",
+	"avatar": "19.jpg"
+}, {
+	"uid": 35,
+	"nickname": "林冲",
+	"username": "linchong",
+	"password": "linchong",
+	"avatar": "20.jpg"
+}]

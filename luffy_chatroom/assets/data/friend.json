@@ -1,0 +1,16 @@
+[{
+	"uid": 11,
+	"text": "曹操",
+	"icon": "glyphicon glyphicon-user",
+	"avatar": "02.jpg"
+} ,{
+	"uid": 21,
+	"text": "唐僧",
+	"icon": "glyphicon glyphicon-user",
+	"avatar": "09.jpg"
+} ,{
+	"uid": 31,
+	"text": "宋江",
+	"icon": "glyphicon glyphicon-user",
+	"avatar": "16.jpg"
+}]
