@@ -4,21 +4,22 @@
     <meta charset="UTF-8">
     <title>小米</title>
     <link href="css/basic.css" rel="stylesheet">
-    <link href="css/iconfont.css" rel="stylesheet">
+    <link href="//at.alicdn.com/t/font_656000_4fhqqdte695uq5mi.css" rel="stylesheet">
     <link href="plugin/bxSlider/css/jquery.bxslider.css" rel="stylesheet">
+    <link href="plugin/bsModal/css/bsmodal.min.css" rel="stylesheet">
 </head>
 <body>
-<div class="topbar">
+<div class="topbar" name="top">
     <div class="container">
         <div class="topbar-nav">
             <a href="#">小米商城</a><span class="sep">|</span>
             <a href="#">云服务</a><span class="sep">|</span>
             <a href="#">水滴</a><span class="sep">|</span>
             <a href="#">金融</a><span class="sep">|</span>
-            <a href="#">Select Region</a>
+            <a href="#selectRegion" data-toggle="modal">Select Region</a>
         </div>
         <div class="topbar-cart">
-            <a class="cart-mini" href="#"><i class="iconfont icon-gouwuche1"></i> 购物车<span
+            <a class="cart-mini" href="#"><i class="iconfont icon-cart"></i> 购物车<span
                     class="cart-mini-num">（0）</span></a>
             <div class="cart-menu">
                 <div class="loading">
@@ -29,7 +30,7 @@
         <div class="topbar-info">
             <a class="link" href="#">登录</a><span class="sep">|</span>
             <a class="link" href="#">注册</a><span class="sep">|</span>
-            <span class="message"><a href="#">消息通知<i class="J_miMessageTotal"></i></a></span>
+            <span class="message"><a href="#">消息通知<i ></i></a></span>
         </div>
     </div>
 </div>
@@ -692,21 +693,21 @@
                 <label class="hide">站内搜索</label>
                 <input type="text" class="filter-text" id="filterText">
                 <span class="filter-btn">
-                        <i class=" iconfont icon-sousuo"></i>
-                    </span>
+                    <i class="iconfont icon-search"></i>
+                </span>
                 <div class="hot-words">
                     <a href="">小米6X 拍人更美</a>
                 </div>
                 <div class="keyword-list" style="display: none">
                     <ul class="result-list">
                         <li>
-                            <a href="">
+                            <a href="#">
                                 小米手机6
                                 <span class="result">约有41件</span>
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="#">
                                 小米手机5X
                                 <span class="result">约有41件</span>
                             </a>
@@ -1337,38 +1338,38 @@
                 <ul class="channel-list clearfix">
                     <li class="exposure top left">
                         <a href="">
-                            <i class="iconfont icon-xiaomi"></i>
+                            <i class="iconfont icon-mix"></i>
                             选购手机
                         </a>
                     </li>
                     <li class="exposure top">
                         <a href="">
-                            <i class="iconfont icon-xiaomi"></i>
-                            选购手机
+                            <i class="iconfont icon-present"></i>
+                            企业团购
                         </a>
                     </li>
                     <li class="exposure top">
                         <a href="">
-                            <i class="iconfont icon-xiaomi"></i>
-                            选购手机
+                            <i class="iconfont icon-F"></i>
+                            F码通道
                         </a>
                     </li>
                     <li class="exposure left">
                         <a href="">
-                            <i class="iconfont icon-xiaomi"></i>
-                            选购手机
+                            <i class="iconfont icon-sim"></i>
+                            米粉卡
                         </a>
                     </li>
                     <li class="exposure">
                         <a href="">
-                            <i class="iconfont icon-xiaomi"></i>
-                            选购手机
+                            <i class="iconfont icon-yijiuhuanxin"></i>
+                            以旧换新
                         </a>
                     </li>
                     <li class="exposure">
                         <a href="">
-                            <i class="iconfont icon-xiaomi"></i>
-                            选购手机
+                            <i class="iconfont icon-chongzhi"></i>
+                            话费充值
                         </a>
                     </li>
 
@@ -1503,7 +1504,7 @@
             <div class="section-head">
                 <h2 class="title">手机</h2>
                 <div class="more">
-                    <a class="more-link" href="#" >查看全部<i class="iconfont icon-you1"></i></a>
+                    <a class="more-link" href="#" >查看全部<i class="iconfont icon-more"></i></a>
                 </div>
             </div>
             <div class="section-body">
@@ -1838,7 +1839,7 @@
                                 <li class="brick-item brick-item-s">
                                     <div class="figure figure-more">
                                         <a href="#">
-                                            <i class="iconfont icon-you2"></i>
+                                            <i class="iconfont icon-pullright"></i>
                                         </a>
                                     </div>
                                     <a class="more" href="#">浏览更多
@@ -2188,283 +2189,152 @@
         <div id="recommend" class="section">
             <div class="section-head">
                 <h2 class="title">为你推荐</h2>
-                <div class="more">
+                <div class="more" style="top:25px;">
                     <div class="xm-controls xm-controls-line-small xm-carousel-controls">
-                        <a class="control control-prev control-disabled" href="javascript: void(0);"><i class="iconfont icon-zuo"></i></a>
-                        <a class="control control-next" href="javascript: void(0);"><i class="iconfont icon-you"></i></a>
+                        <a class="control control-prev control-disabled" href="javascript: void(0);"></a>
+                        <a class="control control-next" href="javascript: void(0);"></a>
                     </div>
                 </div>
             </div>
             <div class="section-body">
                 <div class="for-recommend">
-
-                        <ul class="goods-list clearfix xm-carousel-col-5-list xm-carousel-list">
-                            <li class="clearfix">
-                                <dl>
-                                    <dt>
-                                        <a href="#">
-                                            <img src="//i1.mifile.cn/a1/pms_1519609633.75918897!140x140.jpg" alt="红米5 移动4G+版 2GB内存">
-                                        </a>
-                                    </dt>
-                                    <dd class="for-recommend-name"><a href="#"> 红米5 移动4G+版 2GB内存 </a></dd>
-                                    <dd class="for-recommend-price">799元</dd>
-                                    <dd class="for-recommend-tips"> 84人好评</dd>
-                                    <dd class="for-recommend-notice"></dd>
-                                </dl>
-                            </li>
-                            <li class="clearfix">
-                                <dl>
-                                    <dt>
-                                        <a href="#">
-                                            <img src="//i1.mifile.cn/a1/pms_1505401464.03824312!140x140.jpg" alt="小米MIX2 全网通版 6GB内存 黑色陶瓷 64GB">
-                                        </a>
-                                    </dt>
-                                    <dd class="for-recommend-name">
-                                        <a href="#"> 小米MIX2 全网通版 6GB内存 黑色陶瓷 64GB </a>
-                                    </dd>
-                                    <dd class="for-recommend-price">2799元</dd>
-                                    <dd class="for-recommend-tips"> 1.4万人好评</dd>
-                                    <dd class="for-recommend-notice"></dd>
-                                </dl>
-                            </li>
-                            <li class="clearfix">
-                                <dl>
-                                    <dt>
-                                        <a href="#">
-                                            <img src="//i1.mifile.cn/a1/pms_1521165496.26763454!140x140.jpg" alt="红米Note 5 全网通版 4GB内存 64GB">
-                                        </a>
-                                    </dt>
-                                    <dd class="for-recommend-name">
-                                        <a href="#"> 红米Note 5 全网通版 4GB内存 64GB </a>
-                                    </dd>
-                                    <dd class="for-recommend-price">1399元</dd>
-                                    <dd class="for-recommend-tips"> 4707人好评</dd>
-                                    <dd class="for-recommend-notice"></dd>
-                                </dl>
-                            </li>
-                            <li class="clearfix">
-                                <dl>
-                                    <dt>
-                                        <a href="#">
-                                            <img src="//i1.mifile.cn/a1/pms_1524621078.90015819!140x140.jpg" alt="小米6X 全网通版 4GB内存 64GB">
-                                        </a>
-                                    </dt>
-                                    <dd class="for-recommend-name"><a href="#"> 小米6X 全网通版 4GB内存 64GB </a></dd>
-                                    <dd class="for-recommend-price">1599元</dd>
-                                    <dd class="for-recommend-tips"> 60人好评</dd>
-                                    <dd class="for-recommend-notice"></dd>
-                                </dl>
-                            </li>
-                            <li class="clearfix">
-                                <dl>
-                                    <dt>
-                                        <a href="#">
-                                            <img src="//i1.mifile.cn/a1/pms_1504778935.57065093!140x140.jpg" alt="米家运动鞋 男款">
-                                        </a>
-                                    </dt>
-                                    <dd class="for-recommend-name"><a href="#"> 米家运动鞋 男款 </a></dd>
-                                    <dd class="for-recommend-price">199元</dd>
-                                    <dd class="for-recommend-tips"> 1.4万人好评</dd>
-                                    <dd class="for-recommend-notice"></dd>
-                                </dl>
-                            </li>
-                            <li class="clearfix">
-                                <dl>
-                                    <dt>
-                                        <a href="#">
-                                            <img src="//i1.mifile.cn/a1/pms_1522033929.93635904!140x140.jpg" alt="小米MIX 2S 全网通版 6GB内存 陶瓷标准版 64GB">
-                                        </a>
-                                    </dt>
-                                    <dd class="for-recommend-name"><a href="#"> 小米MIX 2S 全网通版 6GB内存 陶瓷标准版 64GB </a></dd>
-                                    <dd class="for-recommend-price">3299元</dd>
-                                    <dd class="for-recommend-tips"> 2527人好评</dd>
-                                    <dd class="for-recommend-notice"></dd>
-                                </dl>
-                            </li>
-                            <li class="clearfix">
-                                <dl>
-                                    <dt>
-                                        <a href="#">
-                                            <img src="//i1.mifile.cn/a1/pms_1525316758.09779938!140x140.jpg"alt="小米净水器滤芯 反渗透">
-                                        </a>
-                                    </dt>
-                                    <dd class="for-recommend-name"><a href="#"> 小米净水器滤芯 反渗透 </a></dd>
-                                    <dd class="for-recommend-price">499元</dd>
-                                    <dd class="for-recommend-tips"></dd>
-                                    <dd class="for-recommend-notice"></dd>
-                                </dl>
-                            </li>
-                            <li class="clearfix">
-                                <dl>
-                                    <dt>
-                                        <a href="#">
-                                            <img src="//i1.mifile.cn/a1/pms_1505110830.02596280!140x140.jpg" alt="小米Note 3 全网通版 6GB内存 128GB">
-                                        </a>
-                                    </dt>
-                                    <dd class="for-recommend-name"><a href="#"> 小米Note 3 全网通版 6GB内存 128GB </a>
-                                    </dd>
-                                    <dd class="for-recommend-price">2399元</dd>
-                                    <dd class="for-recommend-tips"> 2.1万人好评</dd>
-                                    <dd class="for-recommend-notice"></dd>
-                                </dl>
-                            </li>
-                            <li class="clearfix">
-                                <dl>
-                                    <dt>
-                                        <a href="#">
-                                            <img src="//i1.mifile.cn/a1/pms_1524032283.82393376!140x140.jpg" alt="黑鲨游戏手机 高配版">
-                                        </a>
-                                    </dt>
-                                    <dd class="for-recommend-name"><a href="#"> 黑鲨游戏手机 高配版 </a></dd>
-                                    <dd class="for-recommend-price">3499元</dd>
-                                    <dd class="for-recommend-tips"> 861人好评</dd>
-                                    <dd class="for-recommend-notice"></dd>
-                                </dl>
-                            </li>
-                            <li class="clearfix">
-                                <dl>
-                                    <dt>
-                                        <a href="#​">
-                                            <img src="//i1.mifile.cn/a1/pms_1484548642.81833199!140x140.jpg" alt="雷石KTV专业无线麦克​">
-                                        </a>
-                                    </dt>
-                                    <dd class="for-recommend-name"><a href="#"> 雷石KTV专业无线麦克​ </a></dd>
-                                    <dd class="for-recommend-price">599元</dd>
-                                    <dd class="for-recommend-tips"> 947人好评</dd>
-                                    <dd class="for-recommend-notice"></dd>
-                                </dl>
-                            </li>
-                            <li class="clearfix">
-                                <dl>
-                                    <dt>
-                                        <a href="#">
-                                            <img src="//i1.mifile.cn/a1/pms_1481099756.86043368!140x140.jpg" alt="小米影视会员年卡 券">
-                                        </a>
-                                    </dt>
-                                    <dd class="for-recommend-name"><a href="#"> 小米影视会员年卡 券 </a></dd>
-                                    <dd class="for-recommend-price">498元</dd>
-                                    <dd class="for-recommend-tips"> 1人好评</dd>
-                                    <dd class="for-recommend-notice"></dd>
-                                </dl>
-                            </li>
-                            <li class="clearfix">
-                                <dl>
-                                    <dt>
-                                        <a href="#">
-                                            <img src="//i1.mifile.cn/a1/pms_1522666970.27937468!140x140.jpg" alt="小米AI音箱">
-                                        </a>
-                                    </dt>
-                                    <dd class="for-recommend-name"><a href="#"> 小米AI音箱 </a></dd>
-                                    <dd class="for-recommend-price">299元</dd>
-                                    <dd class="for-recommend-tips"> 4.1万人好评</dd>
-                                    <dd class="for-recommend-notice"></dd>
-                                </dl>
-                            </li>
-                            <li class="clearfix">
-                                <dl>
-                                    <dt>
-                                        <a href="#">
-                                            <img src="//i1.mifile.cn/a1/pms_1522143000.16979413!140x140.jpg" alt="小米净水器1A（厨下式）">
-                                        </a>
-                                    </dt>
-                                    <dd class="for-recommend-name"><a href="#"> 小米净水器1A（厨下式） </a></dd>
-                                    <dd class="for-recommend-price">1499元</dd>
-                                    <dd class="for-recommend-tips"> 124人好评</dd>
-                                    <dd class="for-recommend-notice"></dd>
-                                </dl>
-                            </li>
-                            <li class="clearfix">
-                                <dl>
-                                    <dt>
-                                        <a href="#">
-                                            <img src="//i1.mifile.cn/a1/pms_1522636275.74216007!140x140.jpg" alt="小米短袖T恤 两件装">
-                                        </a>
-                                    </dt>
-                                    <dd class="for-recommend-name"><a href="#"> 小米短袖T恤 两件装 </a></dd>
-                                    <dd class="for-recommend-price">89元</dd>
-                                    <dd class="for-recommend-tips"> 1596人好评</dd>
-                                    <dd class="for-recommend-notice"></dd>
-                                </dl>
-                            </li>
-                            <li class="clearfix">
-                                <dl>
-                                    <dt>
-                                        <a href="#">
-                                            <img src="//i1.mifile.cn/a1/pms_1513857241.9291821!140x140.jpg" alt="新小米移动电源2 (10000mAh)">
-                                        </a>
-                                    </dt>
-                                    <dd class="for-recommend-name"><a href="#"> 新小米移动电源2 (10000mAh) </a></dd>
-                                    <dd class="for-recommend-price">79元</dd>
-                                    <dd class="for-recommend-tips"> 8307人好评</dd>
-                                    <dd class="for-recommend-notice"></dd>
-                                </dl>
-                            </li>
-                            <li class="clearfix">
-                                <dl>
-                                    <dt>
-                                        <a href="#">
-                                            <img src="//i1.mifile.cn/a1/pms_1508125822.19716710!140x140.jpg" alt="红米5A 2GB内存">
-                                        </a>
-                                    </dt>
-                                    <dd class="for-recommend-name"><a href="#"> 红米5A 2GB内存 </a></dd>
-                                    <dd class="for-recommend-price">569元</dd>
-                                    <dd class="for-recommend-tips"> 1.3万人好评</dd>
-                                    <dd class="for-recommend-notice"></dd>
-                                </dl>
-                            </li>
-                            <li class="clearfix">
-                                <dl>
-                                    <dt>
-                                        <a href="#">
-                                            <img src="//i1.mifile.cn/a1/pms_1522204891.45957856!140x140.jpg" alt="米家电动剃须刀">
-                                        </a>
-                                    </dt>
-                                    <dd class="for-recommend-name"><a href="#"> 米家电动剃须刀 </a></dd>
-                                    <dd class="for-recommend-price">199元</dd>
-                                    <dd class="for-recommend-tips"> 2859人好评</dd>
-                                    <dd class="for-recommend-notice"></dd>
-                                </dl>
-                            </li>
-                            <li class="clearfix">
-                                <dl>
-                                    <dt>
-                                        <a href="#">
-                                            <img src="//i1.mifile.cn/a1/pms_1524571235.37826274!140x140.jpg" alt="小米小爱音箱mini">
-                                        </a>
-                                    </dt>
-                                    <dd class="for-recommend-name"><a href="#"> 小米小爱音箱mini </a></dd>
-                                    <dd class="for-recommend-price">169元</dd>
-                                    <dd class="for-recommend-tips"> 845人好评</dd>
-                                    <dd class="for-recommend-notice"></dd>
-                                </dl>
-                            </li>
-                            <li class="clearfix">
-                                <dl>
-                                    <dt>
-                                        <a href="#">
-                                            <img src="//i1.mifile.cn/a1/pms_1510019402.48089978!140x140.jpg" alt="小米6 全网通版 4GB内存">
-                                        </a>
-                                    </dt>
-                                    <dd class="for-recommend-name"><a href="#"> 小米6 全网通版 4GB内存 </a></dd>
-                                    <dd class="for-recommend-price">2299元</dd>
-                                    <dd class="for-recommend-tips"> 1.3万人好评</dd>
-                                    <dd class="for-recommend-notice"></dd>
-                                </dl>
-                            </li>
-                            <li class="clearfix">
-                                <dl>
-                                    <dt>
-                                        <a href="#">
-                                            <img src="//i1.mifile.cn/a1/pms_1522071421.29489244!140x140.jpg" alt="米兔遥控小飞机">
-                                        </a>
-                                    </dt>
-                                    <dd class="for-recommend-name"><a href="#"> 米兔遥控小飞机 </a></dd>
-                                    <dd class="for-recommend-price">399元</dd>
-                                    <dd class="for-recommend-tips"> 173人好评</dd>
-                                    <dd class="for-recommend-notice"></dd>
-                                </dl>
-                            </li>
-                        </ul>
+                    <ul class="goods-list clearfix xm-carousel-col-5-list xm-carousel-list">
+                        <li>
+                            <dl>
+                                <dt>
+                                    <a href="#">
+                                        <img src="//i1.mifile.cn/a1/pms_1519609633.75918897!140x140.jpg" alt="红米5 移动4G+版 2GB内存">
+                                    </a>
+                                </dt>
+                                <dd class="for-recommend-name"><a href="#"> 红米5 移动4G+版 2GB内存 </a></dd>
+                                <dd class="for-recommend-price">799元</dd>
+                                <dd class="for-recommend-tips"> 84人好评</dd>
+                                <dd class="for-recommend-notice"></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>
+                                    <a href="#">
+                                        <img src="//i1.mifile.cn/a1/pms_1505401464.03824312!140x140.jpg" alt="小米MIX2 全网通版 6GB内存 黑色陶瓷 64GB">
+                                    </a>
+                                </dt>
+                                <dd class="for-recommend-name">
+                                    <a href="#"> 小米MIX2 全网通版 6GB内存 黑色陶瓷 64GB </a>
+                                </dd>
+                                <dd class="for-recommend-price">2799元</dd>
+                                <dd class="for-recommend-tips"> 1.4万人好评</dd>
+                                <dd class="for-recommend-notice"></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>
+                                    <a href="#">
+                                        <img src="//i1.mifile.cn/a1/pms_1521165496.26763454!140x140.jpg" alt="红米Note 5 全网通版 4GB内存 64GB">
+                                    </a>
+                                </dt>
+                                <dd class="for-recommend-name">
+                                    <a href="#"> 红米Note 5 全网通版 4GB内存 64GB </a>
+                                </dd>
+                                <dd class="for-recommend-price">1399元</dd>
+                                <dd class="for-recommend-tips"> 4707人好评</dd>
+                                <dd class="for-recommend-notice"></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>
+                                    <a href="#">
+                                        <img src="//i1.mifile.cn/a1/pms_1524621078.90015819!140x140.jpg" alt="小米6X 全网通版 4GB内存 64GB">
+                                    </a>
+                                </dt>
+                                <dd class="for-recommend-name"><a href="#"> 小米6X 全网通版 4GB内存 64GB </a></dd>
+                                <dd class="for-recommend-price">1599元</dd>
+                                <dd class="for-recommend-tips"> 60人好评</dd>
+                                <dd class="for-recommend-notice"></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>
+                                    <a href="#">
+                                        <img src="//i1.mifile.cn/a1/pms_1504778935.57065093!140x140.jpg" alt="米家运动鞋 男款">
+                                    </a>
+                                </dt>
+                                <dd class="for-recommend-name"><a href="#"> 米家运动鞋 男款 </a></dd>
+                                <dd class="for-recommend-price">199元</dd>
+                                <dd class="for-recommend-tips"> 1.4万人好评</dd>
+                                <dd class="for-recommend-notice"></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>
+                                    <a href="#">
+                                        <img src="//i1.mifile.cn/a1/pms_1522033929.93635904!140x140.jpg" alt="小米MIX 2S 全网通版 6GB内存 陶瓷标准版 64GB">
+                                    </a>
+                                </dt>
+                                <dd class="for-recommend-name"><a href="#"> 小米MIX 2S 全网通版 6GB内存 陶瓷标准版 64GB </a></dd>
+                                <dd class="for-recommend-price">3299元</dd>
+                                <dd class="for-recommend-tips"> 2527人好评</dd>
+                                <dd class="for-recommend-notice"></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>
+                                    <a href="#">
+                                        <img src="//i1.mifile.cn/a1/pms_1525316758.09779938!140x140.jpg"alt="小米净水器滤芯 反渗透">
+                                    </a>
+                                </dt>
+                                <dd class="for-recommend-name"><a href="#"> 小米净水器滤芯 反渗透 </a></dd>
+                                <dd class="for-recommend-price">499元</dd>
+                                <dd class="for-recommend-tips"></dd>
+                                <dd class="for-recommend-notice"></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>
+                                    <a href="#">
+                                        <img src="//i1.mifile.cn/a1/pms_1505110830.02596280!140x140.jpg" alt="小米Note 3 全网通版 6GB内存 128GB">
+                                    </a>
+                                </dt>
+                                <dd class="for-recommend-name"><a href="#"> 小米Note 3 全网通版 6GB内存 128GB </a>
+                                </dd>
+                                <dd class="for-recommend-price">2399元</dd>
+                                <dd class="for-recommend-tips"> 2.1万人好评</dd>
+                                <dd class="for-recommend-notice"></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>
+                                    <a href="#">
+                                        <img src="//i1.mifile.cn/a1/pms_1524032283.82393376!140x140.jpg" alt="黑鲨游戏手机 高配版">
+                                    </a>
+                                </dt>
+                                <dd class="for-recommend-name"><a href="#"> 黑鲨游戏手机 高配版 </a></dd>
+                                <dd class="for-recommend-price">3499元</dd>
+                                <dd class="for-recommend-tips"> 861人好评</dd>
+                                <dd class="for-recommend-notice"></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>
+                                    <a href="#​">
+                                        <img src="//i1.mifile.cn/a1/pms_1484548642.81833199!140x140.jpg" alt="雷石KTV专业无线麦克​">
+                                    </a>
+                                </dt>
+                                <dd class="for-recommend-name"><a href="#"> 雷石KTV专业无线麦克​ </a></dd>
+                                <dd class="for-recommend-price">599元</dd>
+                                <dd class="for-recommend-tips"> 947人好评</dd>
+                                <dd class="for-recommend-notice"></dd>
+                            </dl>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -2473,7 +2343,78 @@
                 <h2 class="title">热评产品</h2>
             </div>
             <div class="section-body">
-
+                <ul class="review-list clearfix">
+                    <li class="review-item review-item-first">
+                        <div class="figure figure-img">
+                            <a class="exposure" href="#">
+                                <img src="//i1.mifile.cn/a4/54e35fdd-bc68-4a89-bad7-c9c3bb2fc6fe" width="296" height="220" alt="米家压力IH电饭煲">
+                            </a>
+                        </div>
+                        <p class="review">
+                            <a href="#">包装很让人感动，式样也很可爱，做出的饭全家人都爱吃，超爱五星！手机控制还是不太熟练，最主要是没有连接...</a>
+                        </p>
+                        <p class="author"> 来自于 HZG 的评价 <span class="date" ></span></p>
+                        <div class="info">
+                            <h3 class="title">
+                                <a href="#">米家压力IH电饭煲</a>
+                            </h3>
+                            <span class="sep">|</span>
+                            <p class="price"><span class="num">999</span>元</p>
+                        </div>
+                    </li>
+                    <li class="review-item">
+                        <div class="figure figure-img">
+                            <a class="exposure" href="#">
+                                <img src="//i1.mifile.cn/a4/bae79ac6-60d5-478d-90e7-ff1222764bd1" width="296" height="220" alt="小米随身蓝牙音箱">
+                            </a>
+                        </div>
+                        <p class="review">
+                            <a href="#">超级喜欢！小巧玲珑！音质完美！不知道为什么！只要是小米出的东西我都喜欢！那倒是因为那一句？？小米为发...</a>
+                        </p>
+                        <p class="author"> 来自于 田密 的评价 <span class="date"></span></p>
+                        <div class="info">
+                            <h3 class="title"><a href="#">小米随身蓝牙音箱</a>
+                            </h3>
+                            <span class="sep">|</span>
+                            <p class="price"><span class="num">69</span>元</p>
+                        </div>
+                    </li>
+                    <li class="review-item">
+                        <div class="figure figure-img">
+                            <a class="exposure" href="#">
+                                <img src="//i1.mifile.cn/a4/xmad_15094337975564_BSRIq.jpg" width="296" height="220"
+                                 alt="米家车载空气净化器（USB车充版） 灰色">
+                            </a>
+                        </div>
+                        <p class="review">
+                            <a href="#">外形简洁大方，大爱小米！全家人都在用小米的产品，真心不错，最主要的是性价比高。附图，给客服妹子一个大...</a>
+                        </p>
+                        <p class="author"> 来自于 酸小妞～！ 的评价 <span class="date"></span></p>
+                        <div class="info">
+                            <h3 class="title">
+                                <a href="#">米家车载空气净化器（USB车充版） 灰色</a>
+                            </h3>
+                            <span class="sep">|</span>
+                            <p class="price"><span class="num">449</span>元</p>
+                        </div>
+                    </li>
+                    <li class="review-item">
+                        <div class="figure figure-img">
+                            <a class="exposure" href="#">
+                                <img src="//i1.mifile.cn/a4/a5886d24-b443-4a15-88ca-5dbd43b72de3" width="296" height="220" alt="小米空气净化器2">
+                            </a>
+                        </div>
+                        <p class="review">
+                            <a href="#">先五星好评。再来说说小米空气净化器，北方的天气雾霾越来越常态，这就迫切需要一台性价比高的空气净化器，...</a>
+                        </p>
+                        <p class="author"> 来自于 sddyboy 的评价 <span class="date" data-date="1421731260"></span></p>
+                        <div class="info">
+                            <h3 class="title"><a href="#">小米空气净化器2</a></h3>
+                            <span class="sep">|</span>
+                            <p class="price"><span class="num">699</span>元</p>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
         <div id="content" class="section">
@@ -2481,7 +2422,238 @@
                 <h2 class="title">内容</h2>
             </div>
             <div class="section-body">
-
+                <ul class="content-list clearfix">
+                    <li class="content-item content-item-book content-item-first">
+                        <h2 class="title">图书</h2>
+                            <ul class="item-list clearfix">
+                                <li>
+                                    <h4 class="name">
+                                        <a href="#" class="exposure">哈利·波特与被诅咒的孩子</a>
+                                    </h4>
+                                    <p class="desc">
+                                        <a href="#">“哈利·波特”第八个故事中文版震撼来袭！特别彩排版剧本！ </a>
+                                    </p>
+                                    <p class="price">
+                                        <a href="#">29.37元</a>
+                                    </p>
+                                    <div class="figure figure-img">
+                                        <a href="#">
+                                            <img src="//i1.mifile.cn/a4/5e5da924-84e3-4959-9e25-5891cdf30757" width="160" height="140" alt="哈利·波特与被诅咒的孩子">
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h4 class="name">
+                                        <a href="#">好吗好的</a>
+                                    </h4>
+                                    <p class="desc">
+                                        <a href="#">畅销作家大冰2016年新书！讲给你听，好吗好的！</a>
+                                    </p>
+                                    <p class="price">
+                                        <a href="#">17.99元</a>
+                                    </p>
+                                    <div class="figure figure-img">
+                                        <a href="#">
+                                            <img src="//i1.mifile.cn/a4/61e1385e-54de-48f3-8717-5e4f4b1cdd14" width="160" height="140" alt="好吗好的">
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="more">
+                                    <p class="desc">海量好书，享受精品阅读时光<br>漂亮的中文排版，千万读者选择！</p>
+                                    <a class="btn btn-small btn-line-orange" href="#">前往多看阅读</a>
+                                    <img class="thumb" src="//s01.mifile.cn/i/index/more-duokan.jpg" width="160" height="140" alt="多看阅读">
+                                </li>
+                            </ul>
+                        <div class="pagers-wrapper"></div>
+                        <div class="xm-controls xm-controls-block-small xm-carousel-controls">
+                            <a class="control control-prev" href="javascript: void(0);" ></a>
+                            <a class="control control-next" href="javascript: void(0);"></a>
+                        </div>
+                    </li>
+                    <li class="content-item content-item-theme">
+                        <h2 class="title">MIUI 主题</h2>
+                            <ul class="item-list clearfix">
+                                <li>
+                                    <h4 class="name">
+                                        <a href="#">复仇者联盟3</a>
+                                    </h4>
+                                    <p class="desc">
+                                        <a href="#">漫威电影宇宙10周年，定制主题上线！漫威粉丝不容错过！</a>
+                                    </p>
+                                    <p class="price">
+                                        <a href="#">5.2米币</a>
+                                    </p>
+                                    <div class="figure figure-img">
+                                        <a href="#">
+                                            <img src="//i1.mifile.cn/a4/xmad_1525241154775_RXyBJ.png" width="160" height="140" alt="复仇者联盟3">
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h4 class="name">
+                                        <a href="#">迪士尼  松松</a>
+                                    </h4>
+                                    <p class="desc">
+                                        <a href="#">圆脑袋，小短腿，看一眼就会萌翻你的“松松”来啦！</a>
+                                    </p>
+                                    <p class="price">
+                                        <a href="#">10米币</a>
+                                    </p>
+                                    <div class="figure figure-img">
+                                        <a href="#">
+                                            <img src="//i1.mifile.cn/a4/xmad_15252433782411_YXjue.png" width="160" height="140" alt="迪士尼 松松">
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h4 class="name">
+                                        <a href=#">迪士尼 怪兽大学</a>
+                                    </h4>
+                                    <p class="desc">
+                                        <a href="#">跟着大眼仔和毛怪练习你的惊吓技能！</a>
+                                    </p>
+                                    <p class="price">
+                                        <a href="#">10米币</a>
+                                    </p>
+                                    <div class="figure figure-img">
+                                        <a href="#">
+                                            <img src="//i1.mifile.cn/a4/xmad_15252434134448_gKYWw.png" width="160" height="140" alt="迪士尼 怪兽大学">
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="more">
+                                    <p class="desc">众多个性主题、百变锁屏与自由桌面<br>让你的手机与众不同！</p>
+                                    <a class="btn btn-small btn-line-green" href="#">前往MIUI主题市场</a>
+                                    <img class="thumb" src="//s01.mifile.cn/i/index/more-miui.jpg" width="160" height="140" alt="MIUI主题市场">
+                                </li>
+                            </ul>
+                        <div class="pagers-wrapper"></div>
+                        <div class="xm-controls xm-controls-block-small xm-carousel-controls">
+                            <a class="control control-prev" href="javascript: void(0);"></a>
+                            <a class="control control-next" href="javascript: void(0);"></a>
+                        </div>
+                    </li>
+                    <li class="content-item content-item-game">
+                        <h2 class="title">游戏</h2>
+                            <ul class="item-list clearfix" >
+                                <li>
+                                    <h4 class="name">
+                                        <a href="#">剑侠世界2</a>
+                                    </h4>
+                                    <p class="desc">
+                                        <a href="#">潮流武侠，炫动江湖！</a>
+                                    </p>
+                                    <p class="price">
+                                        <a href="#"></a>
+                                    </p>
+                                    <div class="figure figure-img">
+                                        <a href="#">
+                                            <img src="//i1.mifile.cn/a4/xmad_15175523589542_niohb.png" width="160" height="140" alt="剑侠世界2">
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h4 class="name">
+                                        <a href="#">小米超神</a>
+                                    </h4>
+                                    <p class="desc">
+                                        <a href="#">实力派，一起团！！</a>
+                                    </p>
+                                    <p class="price">
+                                        <a href="#"></a>
+                                    </p>
+                                    <div class="figure figure-img">
+                                        <a href="#">
+                                            <img src="//i1.mifile.cn/a4/xmad_15120234492499_MNEVo.png" width="160" height="140" alt="小米超神">
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h4 class="name">
+                                        <a href="#">米柚手游模拟器</a>
+                                    </h4>
+                                    <p class="desc">
+                                        <a href="#">在电脑上玩遍小米所有手游</a>
+                                    </p>
+                                    <p class="price">
+                                        <a href="#">免费</a>
+                                    </p>
+                                    <div class="figure figure-img">
+                                        <a href="#">
+                                            <img src="//i1.mifile.cn/a4/T1czW_BXCv1R4cSCrK.png" width="160" height="140" alt="米柚手游模拟器">
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="more">
+                                    <p class="desc">免费下载海量的手机游戏<br>天天都有现金福利赠送</p>
+                                    <a class="btn btn-small btn-line-red" href="#">前往小米游戏商店</a>
+                                    <img class="thumb" src="//s01.mifile.cn/i/index/more-game.jpg" width="160" height="140" alt="小米游戏商店">
+                                </li>
+                            </ul>
+                        <div class="pagers-wrapper"></div>
+                        <div class="xm-controls xm-controls-block-small xm-carousel-controls">
+                            <a class="control control-prev" href="javascript: void(0);"></a>
+                            <a class="control control-next" href="javascript: void(0);"></a>
+                        </div>
+                    </li>
+                    <li class="content-item content-item-app">
+                        <h2 class="title">应用</h2>
+                            <ul class="item-list clearfix" >
+                                <li>
+                                    <h4 class="name">
+                                        <a href="#">2017金米奖</a>
+                                    </h4>
+                                    <p class="desc">
+                                        <a href="#">最优秀的应用和游戏</a>
+                                    </p>
+                                    <p class="price">
+                                        <a href="#"></a>
+                                    </p>
+                                    <div class="figure figure-img">
+                                        <a href="#">
+                                            <img src="//i1.mifile.cn/a4/3332da7d-4056-4694-9548-c83b7b3af7d3" width="160" height="140" alt="2017金米奖">
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h4 class="name"><a href="#">Forest</a> </h4>
+                                    <p class="desc">
+                                        <a href="#">帮助您专心于生活中每个重要时刻</a>
+                                    </p>
+                                    <p class="price">
+                                        <a href="#">免费</a>
+                                    </p>
+                                    <div class="figure figure-img">
+                                        <a href="#"> <img src="//i1.mifile.cn/a4/T1TkKvBCKv1R4cSCrK.png" width="160" height="140" alt="Forest"> </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h4 class="name">
+                                        <a href="#">小米应用</a>
+                                    </h4>
+                                    <p class="desc">
+                                        <a href="#">小米出品 必属精品</a>
+                                    </p>
+                                    <p class="price">
+                                        <a href="#">免费</a>
+                                    </p>
+                                    <div class="figure figure-img">
+                                        <a href="#"> <img src="//i1.mifile.cn/a4/T15VZvB5Kv1R4cSCrK.png" width="160" height="140" alt="小米应用"> </a>
+                                    </div>
+                                </li>
+                                <li class="more">
+                                    <p class="desc">帮助小米手机和其他安卓手机用户<br>发现好用的安卓应用</p>
+                                    <a class="btn btn-small btn-line-ocean" href="#">前往小米应用商店</a>
+                                    <img class="thumb" src="//s01.mifile.cn/i/index/more-app.jpg" width="160" height="140" alt="小米应用商店">
+                                </li>
+                            </ul>
+                        <div class="pagers-wrapper"></div>
+                        <div class="xm-controls xm-controls-block-small xm-carousel-controls">
+                            <a class="control control-prev " href="#"></a>
+                            <a class="control control-next " href="#"></a>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
         <div id="video" class="section">
@@ -2489,7 +2661,80 @@
                 <h2 class="title">视频</h2>
             </div>
             <div class="section-body">
-
+                <ul class="video-list clearfix">
+                    <li class="video-item video-item-first">
+                        <div class="figure figure-img">
+                            <a class="play-video" href="javascript: void(0);"
+                               data-video-poster="//i8.mifile.cn/b2c-mimall-media/b8649c8665f00fbadabd56663edb07fa.jpg"
+                                                          data-video="//v.mifile.cn/b2c-mimall-media/bba7529de8957c041624bf0b0fb4458f.mp4"
+                                                          data-video-title="品质之魂 存于匠心" title="点击播放视频">
+                                <img src="//i1.mifile.cn/a4/xmad_15159163504023_uToSM.jpg" width="296" height="180" alt="品质之魂 存于匠心">
+                                <span class="play"><i class="iconfont icon-playfill"></i></span>
+                            </a>
+                        </div>
+                        <h3 class="title">
+                            <a class="play-video" href="javascript: void(0);"
+                               data-video-poster="//i8.mifile.cn/b2c-mimall-media/b8649c8665f00fbadabd56663edb07fa.jpg"
+                                             data-video="//v.mifile.cn/b2c-mimall-media/bba7529de8957c041624bf0b0fb4458f.mp4"
+                                             data-video-title="品质之魂 存于匠心" title="点击播放视频">品质之魂 存于匠心</a>
+                        </h3>
+                        <p class="desc">红米手机品质的工程师访谈</p>
+                    </li>
+                    <li class="video-item">
+                        <div class="figure figure-img">
+                            <a class="play-video" href="javascript: void(0);"
+                               data-video-poster="//i8.mifile.cn/b2c-mimall-media/6de7e9f338d5863faf79447ecf1298a8.jpg"
+                                                          data-video="//v.mifile.cn/b2c-mimall-media/643918d12d181ab65634cbd4ecd0cf1d.mp4"
+                                                          data-video-title="红米手机工艺视频" title="点击播放视频" data-stat-id="AA19425+2_43_2_246">
+                                <img src="//i1.mifile.cn/a4/xmad_15156644526382_GiJxL.jpg" width="296" height="180" alt="红米手机工艺视频">
+                                <span class="play"><i class="iconfont icon-playfill"></i></span>
+                            </a>
+                        </div>
+                        <h3 class="title">
+                            <a class="play-video" href="javascript: void(0);"
+                               data-video-poster="//i8.mifile.cn/b2c-mimall-media/6de7e9f338d5863faf79447ecf1298a8.jpg"
+                                             data-video="//v.mifile.cn/b2c-mimall-media/643918d12d181ab65634cbd4ecd0cf1d.mp4"
+                                             data-video-title="红米手机工艺视频" title="点击播放视频" >红米手机工艺视频</a>
+                        </h3>
+                        <p class="desc">红米5 / 红米5 Plus 高颜值机身</p>
+                    </li>
+                    <li class="video-item">
+                        <div class="figure figure-img">
+                            <a class="play-video" href="javascript: void(0);"
+                               data-video-poster="//i8.mifile.cn/b2c-mimall-media/a62e2a7799d9651b9895cdb3d5bdd5b7.jpg"
+                                                          data-video="//v.mifile.cn/b2c-mimall-media/9e43087a3ac5525a33982a2da2ba2cff.mp4"
+                                                          data-video-title="雷军与斯塔克打造全面屏2.0" title="点击播放视频">
+                                <img src="//i1.mifile.cn/a4/xmad_15156722682931_MVAmC.jpg" width="296" height="180" alt="雷军与斯塔克打造全面屏2.0">
+                                <span class="play"><i class="iconfont icon-playfill"></i></span>
+                            </a>
+                        </div>
+                        <h3 class="title">
+                            <a class="play-video" href="javascript: void(0);"
+                               data-video-poster="//i8.mifile.cn/b2c-mimall-media/a62e2a7799d9651b9895cdb3d5bdd5b7.jpg"
+                                             data-video="//v.mifile.cn/b2c-mimall-media/9e43087a3ac5525a33982a2da2ba2cff.mp4"
+                                             data-video-title="雷军与斯塔克打造全面屏2.0" title="点击播放视频">雷军与斯塔克打造全面屏2.0</a>
+                        </h3>
+                        <p class="desc">一场关于小米MIX 2 极致工艺的巅峰对话</p>
+                    </li>
+                    <li class="video-item">
+                        <div class="figure figure-img">
+                            <a class="play-video" href="javascript: void(0);"
+                               data-video-poster="//i8.mifile.cn/b2c-mimall-media/d47f7a1895b0da1f58ff28095c1babed.png"
+                                                          data-video="//v.mifile.cn/b2c-mimall-media/079803c78170eaf692d936eba3978cc1.mp4"
+                                                          data-video-title="MIUI 9 理念视频" title="点击播放视频">
+                                <img src="//i1.mifile.cn/a4/xmad_15156722489305_NSZUh.jpg" width="296" height="180" alt="MIUI 9 理念视频">
+                                <span class="play"><i class="iconfont icon-playfill"></i></span>
+                            </a>
+                        </div>
+                        <h3 class="title">
+                            <a class="play-video" href="javascript: void(0);"
+                               data-video-poster="//i8.mifile.cn/b2c-mimall-media/d47f7a1895b0da1f58ff28095c1babed.png"
+                                             data-video="//v.mifile.cn/b2c-mimall-media/079803c78170eaf692d936eba3978cc1.mp4"
+                                             data-video-title="MIUI 9 理念视频" title="点击播放视频">MIUI9 理念视频</a>
+                        </h3>
+                        <p class="desc">快如闪电，前所未有的流畅</p>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
@@ -2498,11 +2743,11 @@
     <div class="container">
         <div class="footer-service">
             <ul class="list-service clearfix">
-                <li><a href="#" target="_blank" ><i class="iconfont icon-x"></i>预约维修服务</a></li>
-                <li><a href="#" target="_blank" ><i class="iconfont"></i>7天无理由退货</a></li>
-                <li><a href="#" target="_blank" ><i class="iconfont"></i>15天免费换货</a></li>
-                <li><a href="#" target="_blank" ><i class="iconfont"></i>满150元包邮</a></li>
-                <li><a href="#" target="_blank" ><i class="iconfont"></i>520余家售后网点</a></li>
+                <li><a href="#" target="_blank" ><i class="iconfont icon-moneybag"></i>预约维修服务</a></li>
+                <li><a href="#" target="_blank" ><i class="iconfont icon-number7"></i>7天无理由退货</a></li>
+                <li><a href="#" target="_blank" ><i class="iconfont icon-number15"></i>15天免费换货</a></li>
+                <li><a href="#" target="_blank" ><i class="iconfont icon-present"></i>满150元包邮</a></li>
+                <li><a href="#" target="_blank" ><i class="iconfont icon-locationlight"></i>520余家售后网点</a></li>
             </ul>
         </div>
         <div class="footer-links clearfix">
@@ -2569,7 +2814,7 @@
             <div class="col-contact">
                 <p class="phone">400-100-5678</p>
                 <p> 周一至周日 8:00-18:00<br>（仅收市话费）</p>
-                <a class="btn btn-line-primary btn-small" href="#"><i class="iconfont"></i> 联系客服</a>
+                <a class="btn btn-line-primary btn-small" href="#"><i class="iconfont icon-service"></i> 联系客服</a>
             </div>
         </div>
     </div>
@@ -2627,31 +2872,40 @@
 </div>
 <script src="js/jquery.min.js"></script>
 <script src="plugin/bxSlider/js/jquery.bxslider.js"></script>
+<script src="plugin/bsModal/js/bsmodal.min.js"></script>
 <script>
     $(document).ready(function () {
-        $('#filterText').on('focus', function () {
-            $(this).parent('form').removeClass('filter-form-focus').addClass('filter-form-focus').find('.hot-words').hide().next('.keyword-list').show();
+        $('#filterText').on({
+            'focus': function () {
+                $(this).parent('form').removeClass('filter-form-focus').addClass('filter-form-focus').find('.hot-words').hide().next('.keyword-list').show();
+            },
+            'focusout':function () {
+                $(this).parent('form').removeClass('filter-form-focus').find('.hot-words').show().next('.keyword-list').hide();
+            }
         });
-        $('#filterText').on('focusout', function () {
-            $(this).parent('form').removeClass('filter-form-focus').find('.hot-words').show().next('.keyword-list').hide();
+        $('.home-menu .category-list > li').on({
+            'mouseover': function () {
+                $(this).removeClass('category-item-active').addClass('category-item-active');
+            },
+            'mouseout': function () {
+                $(this).removeClass('category-item-active');
+            }
         });
-        $('.home-menu .category-list > li').on('mouseover', function () {
-            $(this).removeClass('category-item-active').addClass('category-item-active');
+        $('.header-nav .nav-list > li').on({
+            'mouseover':function () {
+                $(this).removeClass('nav-item-active').addClass('nav-item-active').find('.item-children').show();
+            },
+            'mouseout': function () {
+                $(this).removeClass('nav-item-active').find('.item-children').hide();
+            }
         });
-        $('.home-menu .category-list > li').on('mouseout', function () {
-            $(this).removeClass('category-item-active');
-        });
-        $('.header-nav .nav-list > li').on('mouseover', function () {
-            $(this).removeClass('nav-item-active').addClass('nav-item-active').find('.item-children').show();
-        });
-        $('.header-nav .nav-list > li').on('mouseout', function () {
-            $(this).removeClass('nav-item-active').find('.item-children').hide();
-        });
-        $('.section li.brick-item').on('mouseover', function () {
-            $(this).removeClass('brick-item-active').addClass('brick-item-active');
-        });
-        $('.section li.brick-item').on('mouseout', function () {
-            $(this).removeClass('brick-item-active');
+        $('.section li.brick-item').on({
+            'mouseover': function () {
+                $(this).removeClass('brick-item-active').addClass('brick-item-active');
+            },
+            'mouseout': function () {
+                $(this).removeClass('brick-item-active');
+            }
         });
 
         $(".tab-list > li").on("mouseover",function(){
@@ -2663,7 +2917,7 @@
         $('.category-menu > .home-silder').bxSlider({
             auto: true,
             slideWidth: 1226,
-            infiniteLoop: false,
+            infiniteLoop: true,
             hideControlOnEnd: true,
             slideMargin: 10
         });
@@ -2671,9 +2925,166 @@
             slideWidth: 1226,
             minSlides: 5,
             maxSlides: 5,
-            slideMargin: 14
+            slideMargin: 14,
+            prevText:'<i class="iconfont icon-prevpage"></i>',
+            nextText:'<i class="iconfont icon-nextpage"></i>',
+            nextSelector:$('#recommend .control-next'),
+            prevSelector:$('#recommend .control-prev'),
+            hideControlOnEnd: true,
+        });
+        $('.content-item-book .item-list').bxSlider({
+            slideWidth: 296,
+            infiniteLoop: true,
+            prevText:'<i class="iconfont icon-shangyiye"></i>',
+            nextText:'<i class="iconfont icon-xiayiye"></i>',
+            nextSelector:$('.content-item-book .control-next'),
+            prevSelector:$('.content-item-book .control-prev'),
+            pagerSelector:$('.content-item-book .pagers-wrapper')
+        });
+        $('.content-item-theme .item-list').bxSlider({
+            slideWidth: 296,
+            infiniteLoop: true,
+            prevText:'<i class="iconfont icon-shangyiye"></i>',
+            nextText:'<i class="iconfont icon-xiayiye"></i>',
+            nextSelector:$('.content-item-theme .control-next'),
+            prevSelector:$('.content-item-theme .control-prev'),
+            pagerSelector:$('.content-item-theme .pagers-wrapper')
+        });
+        $('.content-item-game .item-list').bxSlider({
+            slideWidth: 296,
+            infiniteLoop: true,
+            prevText:'<i class="iconfont icon-shangyiye"></i>',
+            nextText:'<i class="iconfont icon-xiayiye"></i>',
+            nextSelector:$('.content-item-game .control-next'),
+            prevSelector:$('.content-item-game .control-prev'),
+            pagerSelector:$('.content-item-game .pagers-wrapper')
+        });
+        $('.content-item-app .item-list').bxSlider({
+            slideWidth: 296,
+            infiniteLoop: true,
+            prevText:'<i class="iconfont icon-shangyiye"></i>',
+            nextText:'<i class="iconfont icon-xiayiye"></i>',
+            nextSelector:$('.content-item-app .control-next'),
+            prevSelector:$('.content-item-app .control-prev'),
+            pagerSelector:$('.content-item-app .pagers-wrapper')
+        });
+        $(".play-video").on("click", function(t) {
+            t.preventDefault(),
+            $("#modalVideo").find(".modal-hd .title").text($(this).attr("data-video-title")).end().find(".modal-bd").html(
+                '<iframe id="miPlayerIframe" width="880" height="536" src="//hd.mi.com/f/zt/hd/miplayer2/index.html?vurl=' + $(this).attr("data-video") + "&poster=" + $(this).attr("data-video-poster") + '" frameborder="0" allowfullscreen></iframe>'
+            ).find("iframe").focus();
+            $("#modalVideo").modal({
+                show: !0,
+                backdrop: "static"
+            })
+        });
+        $("#modalVideo").on("hide", function() {
+            $("#modalVideo").find(".modal-hd .title").empty(),
+            $("#modalVideo").find(".modal-bd").empty()
         });
     })
 </script>
+<div class="right-bar right-bar-show-l582">
+    <div class="bar-l">
+        <div id="J_rightbar_l">
+            <ul class="bar-top">
+                <li class="bar-sort bar-sort-qr">
+                    <a href="javascript:;" class="bar-link">
+                        <div class="bar-img">
+                            <img class="original-img" src="https://i8.mifile.cn/b2c-mimall-media/cc0b8948a88a08f6f3b7cd826e09ace6.png">
+                            <img class="hover-img" src="https://i8.mifile.cn/b2c-mimall-media/1012b08b8f0268aab455c56027109a34.png">
+                        </div>
+                        <p class="bar-text">扫一扫</p>
+                        <div class="bar-pop">
+                            <div class="bar-pop-content">
+                                <img src="https://i8.mifile.cn/b2c-mimall-media/2ecd36165b6c2a820a0488fa7a2c4942.png" class="bar-pop-qr">
+                                <p class="bar-pop-text">微信扫一扫一分钱拼团</p>
+                            </div>
+                            <div class="bar-arrow"></div>
+                        </div>
+                    </a>
+                </li>
+                <li class="bar-sort">
+                    <a href="#" class="bar-link">
+                        <div class="bar-img">
+                            <img class="original-img" src="https://i8.mifile.cn/b2c-mimall-media/55cad219421bee03a801775e7309b920.png">
+                            <img class="hover-img" src="https://i8.mifile.cn/b2c-mimall-media/41f858550f42eb1770b97faf219ae215.png">
+                        </div>
+                        <p class="bar-text">个人中心</p>
+                    </a>
+                </li>
+                <li class="bar-sort">
+                    <a href="#" class="bar-link">
+                        <div class="bar-img">
+                            <img class="original-img" src="https://i8.mifile.cn/b2c-mimall-media/4f036ae4d45002b2a6fb6756cedebf02.png">
+                            <img class="hover-img" src="https://i8.mifile.cn/b2c-mimall-media/5e9f2b1b0da09ac3b3961378284ef2d4.png">
+                        </div>
+                        <p class="bar-text">联系客服</p>
+                    </a>
+                </li>
+                <li class="bar-sort bar-l-car">
+                    <a href="#" class="bar-link">
+                        <div class="bar-img">
+                            <img class="original-img" src="https://i8.mifile.cn/b2c-mimall-media/d7db56d1d850113f016c95e289e36efa.png">
+                            <img class="hover-img" src="https://i8.mifile.cn/b2c-mimall-media/692a6c3b0a93a24f74a29c0f9d68ec71.png">
+                            <span class="bar-car hidden J_barLMum">0</span>
+                        </div>
+                        <p class="bar-text">购物车</p>
+                        <div class="pop"></div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <a class="bar-totop bar-sort" href="#top">
+            <div class="bar-img">
+                <img class="original-img" src="//i1.mifile.cn/f/i/2018/home/totop.png">
+                <img class="hover-img" src="//i1.mifile.cn/f/i/2018/home/totop_hover.png">
+            </div>
+            <p class="bar-text">回顶部</p>
+        </a>
+    </div>
+</div>
+<div id="selectRegion" class="modal fade modal-hide modal-globalSites" data-width="640" aria-hidden="false" style="display: none;">
+   <div class="modal-hd">
+        <a class="close" data-dismiss="modal"><i class="iconfont icon-roundclose"></i></a>
+        <span class="title">Select Region</span>
+    </div>
+    <div class="modal-bd">
+        <h3>Welcome to Mi.com</h3>
+        <p class="modal-globalSites-tips">Please select your country or region</p>
+        <p class="modal-globalSites-links clearfix">
+            <a href="//www.mi.com/index.html"> Mainland China </a>
+            <a href="http://www.mi.com/hk/"> Hong Kong </a>
+            <a href="http://www.mi.com/tw/"> Taiwan </a>
+            <a href="http://www.mi.com/sg/"> Singapore </a>
+            <a href="http://www.mi.com/my/"> Malaysia </a>
+            <a href="http://www.mi.com/ph/"> Philippines </a>
+            <a href="http://www.mi.com/in/"> India </a>
+            <a href="http://www.mi.com/id/"> Indonesia </a>
+            <a href="http://www.mi.com/en/"> Global Home </a>
+            <a href="http://www.mi.com/mena/"> MENA </a>
+            <a href="http://www.mi.com/pl/"> Poland </a>
+            <a href="http://www.mi.com/ua/"> Ukraine </a>
+            <a href="http://www.mi.com/ru/"> Russia </a>
+            <a href="http://www.mi.com/vn/"> Vietnam </a>
+            <a href="http://www.mi.com/mx/"> Mexico </a>
+            <a href="http://www.mi.com/kr/"> Korea </a>
+            <a href="http://www.mi.com/eg/"> Egypt </a>
+            <a href="http://www.mi.com/th/"> Thailand </a>
+            <a href="http://www.mi.com/es/"> Spain </a>
+            <a href="http://www.mi.com/us/"> United States </a>
+            <a href="http://www.mi.com/it/"> Italy </a>
+        </p>
+    </div>
+</div>
+<div id="modalVideo" class="modal modal-video fade modal-hide">
+    <div class="modal-hd">
+        <h3 class="title">视频播放</h3>
+        <a class="close" data-dismiss="modal"><i class="iconfont icon-roundclose"></i></a>
+    </div>
+    <div class="modal-bd">
+        <div class="loading"><div class="loader"></div></div>
+    </div>
+</div>
 </body>
 </html>
