@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo List</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<header class="navbar navbar-inverse">
+    <div class="container">
+        <a href="" class="navbar-brand">ToDo List</a>
+    </div>
+</header>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form action="" id="todoForm">
+                <label for="todoInput">输入待办事项</label>
+                <input type="text" id="todoInput" class="form-control">
+            </form>
+
+        </div>
+    </div>
+    <p></p>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">待办事项的有<span id="todoCount">0</span>项</div>
+                <div class="panel-body">
+                    <ol id="todoList"></ol>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">已经完成的有<span id="overCount">0</span>项</div>
+                <div class="panel-body">
+                    <ol id="overList"></ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="pull-right">
+        <a id="todoClear" class="btn btn-link">清空</a>
+    </p>
+</div>
+<script src="js/jquery.min.js"></script>
+<script>
+(function(){
+	var $form = $('#todoForm'),
+	$input = $('#todoInput'),
+	$todoCounter = $('#todoCount'),
+	$overCounter = $('#overCount'),
+	$todo = $('#todoList'),
+	$over = $('#overList');
+
+	var counter = function (){
+		var count = $todo.children().length;
+		$todoCounter.text(count > 0 ? count : 0);
+		var count = $over.children().length;
+		$overCounter.text(count > 0 ? count : 0);
+	};
+
+	$form.submit(function(e){
+	    e.preventDefault();
+		var $value = $input.val();
+		$todo.append(render_li('active','todo',$value));
+		$input.val('');
+		counter();
+	});
+
+    $todo.on('click','.todoDel',function () {
+        $(this).parent().remove();
+        counter();
+    });
+    $todo.on('click','.todoEdit',function () {
+        $(this).parent().find('input:text,.todoSave').show();
+        $(this).parent().find('.checkbox,.todoEdit,.todoDel').hide();
+        counter();
+    });
+    $todo.on('click','.todoSave',function () {
+        $(this).parent().find('input:text,.todoSave').hide();
+        var $value = $(this).parent().find('input:text').val();
+        $(this).parent().find('.checkbox label').html('<input type="checkbox" name="todo" value="'+$value+'">'+$value);
+        $(this).parent().find('.checkbox,.todoEdit,.todoDel').show();
+        counter();
+    });
+    $todo.on('click','input[name="todo"]',function () {
+        var $value = $(this).val();
+        $over.append(render_li('info','over',$value));
+        $(this).parentsUntil('li').next('.todoDel').trigger('click');
+        counter();
+    });
+    $over.on('click','.todoDel',function () {
+        $(this).parent().remove();
+        counter();
+    });
+    $over.on('click','input[name="over"]',function () {
+        var $value = $(this).val();
+        $todo.append(render_li('active','todo',$value));
+        $(this).parentsUntil('li').next('.todoDel').trigger('click');
+        counter();
+    });
+
+    var render_li = function (style_class,name,value) {
+        var _html = '<li class="'+style_class+'">';
+        _html += '<input style="display: none;" class="form-control" type="text" value="'+value+'">';
+        _html += '<div class="checkbox"><label>';
+        _html += '<input type="checkbox" name="'+name+'" value="'+value+'" '+(name=='over' ? 'checked="checked"' : '')+'>'+value;
+        _html += '</label></div>';
+        _html += '<a href="#" class="btn btn-link todoDel">删除</a>';
+        if(name != 'over') {
+            _html += '<a href="#" class="btn btn-link todoEdit">编辑</a>';
+            _html += '<a href="#" style="display: none;" class="btn btn-link todoSave">保存</a>';
+        }
+
+        return _html;
+
+    };
+    $('#todoClear').on('click',function () {
+        $todo.empty();
+        $over.empty();
+        counter();
+    })
+})();
+</script>
+
+<style>
+    ol > li{
+        padding: 5px;
+        margin: 5px 0;
+        border: 1px solid #eee;
+        border-left-width: 5px;
+        border-radius: 3px;
+        position: relative;
+    }
+    ol > li.active{
+        border-left-color: #1b809e;
+    }
+    ol > li.info{
+        border-left-color: #aa6708;
+    }
+
+    ol > li .todoEdit{
+        right: 50px;
+    }
+    ol > li > a{
+        position: absolute;
+        right: 10px;
+        top:8px;
+    }
+</style>
+</body>
+</html>
